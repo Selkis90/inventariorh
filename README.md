@@ -1,0 +1,2 @@
+# inventariorh
+control de inventarios 
