@@ -27,7 +27,7 @@
     <label for="Cantidad">Cantidad</label>
     <input type="number" name="Cantidad" id="Cantidad" required>
 
-    <label for="Fecha_Ingreso">Fecha_Ingreso</label>
+    <label for="Fecha_Ingreso">Fecha Ingreso</label>
     <input type="date" name="Fecha_Ingreso" id="Fecha_Ingreso" required>
 
     <label for="Costo_Unitario">Costo Unitario</label>
@@ -55,6 +55,8 @@
     <textarea name="Observaciones" id="Observaciones" cols="30" rows="10"></textarea>
 
     <button type="submit" name = "crear">Crear Activo</button>
+
+
 </form>
 
 <?php
