@@ -8,7 +8,7 @@ class StockController
     // Método para crear stock, toma el nombre del producto y la cantidad como parámetros
     public function crearStock($Nombre_Producto, $Cantidad)
     {
-        // Crea una instancia de la clase StockModel
+        // Crea una instancia de la clase StockModel que se encuentra ubicada en model
         $model = new StockModel();
 
         // Llama al método insertarStock de la instancia de StockModel
