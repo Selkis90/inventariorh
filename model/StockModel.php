@@ -15,7 +15,7 @@ class StockModel
 
         if ($sql->execute()) {
             echo "Stock creado exitosamente";
-            header("refresh:3; url=index.php");
+            header("refresh:3; url=../index.php");
         } else {
             echo "Error al crear el stock: " . $sql->error;
         }

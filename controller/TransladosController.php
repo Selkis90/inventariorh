@@ -1,9 +1,13 @@
 <?php
+// Importar el modelo TransladoModel.php que contiene la lógica de manipulación de datos
 require_once '../model/TransladoModel.php';
 
+// Definir la clase TransladosController que maneja las acciones relacionadas con los traslados
 class TransladosController {
     
-    public function crearTranslado($Tipo_Activo,
+    // Método para crear un nuevo traslado
+    public function crearTranslado(
+        $Tipo_Activo,
         $Fecha_Traslado,
         $De_Ubicacion,
         $A_Ubicacion,
@@ -20,11 +24,15 @@ class TransladosController {
         $Telefono_Responsable,
         $Centro_Costo_Responsable,
         $Comentarios, 
-        $Estado){
+        $Estado
+    ){
 
+        // Crear una instancia del modelo TransladoModel
         $modelo = new TransladoModel();
 
-        $modelo->InsertarModel($Tipo_Activo,
+        // Llamar al método InsertarModel del modelo para insertar un nuevo traslado en la base de datos
+        $modelo->InsertarModel(
+            $Tipo_Activo,
             $Fecha_Traslado,
             $De_Ubicacion,
             $A_Ubicacion,
@@ -40,13 +48,16 @@ class TransladosController {
             $Cargo_Responsable,
             $Telefono_Responsable,
             $Centro_Costo_Responsable,
-            $Comentarios, 
-            $Estado);
+            $Comentarios,
+            $Estado
+        );
     }   
 }
 
+// Verificar si la solicitud es de tipo POST y si se ha enviado el formulario de creación
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
     
+    // Recoger los datos del formulario
     $Tipo_Activo = $_POST["Tipo_Activo"];
     $Fecha_Traslado = $_POST["Fecha_Traslado"];
     $De_Ubicacion = $_POST["De_Ubicacion"];
@@ -66,8 +77,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
     $Comentarios = $_POST["Comentarios"]; 
     $Estado = $_POST["Estado"];
 
+    // Crear una instancia del controlador TransladosController
     $controller = new TransladosController();
-    $controller->crearTranslado($Tipo_Activo,
+
+    // Llamar al método crearTranslado para procesar el formulario y crear un nuevo traslado
+    $controller->crearTranslado(
+        $Tipo_Activo,
         $Fecha_Traslado,
         $De_Ubicacion,
         $A_Ubicacion,
@@ -84,6 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
         $Telefono_Responsable,
         $Centro_Costo_Responsable,
         $Comentarios,
-        $Estado);
+        $Estado
+    );
 }
 ?>

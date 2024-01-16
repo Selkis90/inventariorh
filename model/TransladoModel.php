@@ -1,9 +1,13 @@
 <?php
+// Importando el archivo de conexión a la base de datos
 require_once '../conexion.php';
 
+// Definición de la clase TransladoModel
 class TransladoModel{
 
-    public function InsertarModel($Tipo_Activo,
+    // Método para insertar un nuevo registro de Translado en la base de datos
+    public function InsertarModel(
+        $Tipo_Activo,
         $Fecha_Traslado,
         $De_Ubicacion,
         $A_Ubicacion,
@@ -20,10 +24,13 @@ class TransladoModel{
         $Telefono_Responsable,
         $Centro_Costo_Responsable,
         $Comentarios,
-        $Estado){
+        $Estado
+    ){
 
+        // Acceder a la variable global de conexión a la base de datos
         global $conexion;
 
+        // Escapar y sanitizar los datos de entrada
         $Tipo_Activo = mysqli_real_escape_string($conexion, $Tipo_Activo);
         $Fecha_Traslado = mysqli_real_escape_string($conexion, $Fecha_Traslado);
         $De_Ubicacion = mysqli_real_escape_string($conexion, $De_Ubicacion);
@@ -43,7 +50,9 @@ class TransladoModel{
         $Comentarios = mysqli_real_escape_string($conexion, $Comentarios);
         $Estado = mysqli_real_escape_string($conexion, $Estado);
 
-        $sql = $conexion->prepare("INSERT INTO Traslado (Tipo_Activo,
+        // Preparar la instrucción SQL con marcadores de posición
+        $sql = $conexion->prepare("INSERT INTO Traslado (
+            Tipo_Activo,
             Fecha_Traslado,
             De_Ubicacion,
             A_Ubicacion,
@@ -60,8 +69,10 @@ class TransladoModel{
             Telefono_Responsable,
             Centro_Costo_Responsable,
             Comentarios,
-            Estado) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            Estado
+        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
+        // Vincular parámetros a la instrucción preparada
         $sql->bind_param("ssssssssssssssssss", $Tipo_Activo,
             $Fecha_Traslado,
             $De_Ubicacion,
@@ -81,10 +92,12 @@ class TransladoModel{
             $Comentarios,
             $Estado);
 
+        // Ejecutar la instrucción preparada
         if ($sql->execute()) {
             echo "Translado creado exitosamente";
+            // Redirigir a index.php después de 3 segundos
             header("refresh:3; url=../index.php");
-        }else {
+        } else {
             echo "Error al crear el Translado:" . $sql->error;
         }
     }
