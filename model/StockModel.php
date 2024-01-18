@@ -1,8 +1,12 @@
 <?php
 require_once '../conexion.php';
 
+// clase del crud
 class StockModel
 {
+
+    //Funcion para insertar los datos a la base de datos metodo CREATE
+
     public function insertarStock($Nombre_Producto, $Cantidad)
     {
         global $conexion;
@@ -20,5 +24,26 @@ class StockModel
             echo "Error al crear el stock: " . $sql->error;
         }
     }
+    //Funcion para ver los datos que se ingresaron a la base de datos metodo READ
+
+    public function obtenerStock(){
+        global $conexion;
+
+        $sql = "SELECT * FROM Stock";
+        $resultado = $conexion->query($sql);
+
+        if ($resultado->num_rows > 0) {
+            return $resultado->fetch_all(MYSQLI_ASSOC);
+        }else {
+            return array();
+        }
+
+    }
+    //
 }
 ?>
+
+
+
+
+

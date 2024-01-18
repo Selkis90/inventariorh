@@ -19,3 +19,5 @@ require_once 'header.php';
 // Se incluye el archivo 'footer.php', que probablemente contenga la estructura HTML del pie de página
 require_once 'footer.php';
 ?>
+
+

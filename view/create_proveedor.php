@@ -9,28 +9,37 @@ require_once '../model/ProveedorModel.php';
 
 <!-- Formulario para crear un proveedor. Los datos se enviarán al controlador 'ProveedorController.php' mediante el método POST -->
 <form id="createForm" method="post" action="../controller/ProveedorController.php">
-
-    <!-- Campos del formulario -->
-    <label for="nombre">Nombre de la empresa:</label>
-    <input type="text" id="nombre" name="nombre" required>
-
-    <label for="contacto">Contacto:</label>
-    <input type="text" id="contacto" name="contacto" required>
-
-    <label for="telefono">Teléfono:</label>
-    <input type="tel" id="telefono" name="telefono" required>
-
-    <label for="direccion">Dirección:</label>
-    <input type="text" id="direccion" name="direccion" required>
-
-    <label for="correoElectronico">Correo Electrónico:</label>
-    <input type="email" id="correoElectronico" name="correoElectronico" required>
-
-    <label for="observaciones">Observaciones:</label>
-    <textarea id="observaciones" name="observaciones"></textarea>
-
-    <!-- Botón de envío del formulario con el nombre 'crear' -->
-    <button type="submit" name="crear">Crear Proveedor</button>
+    <ul>
+        <li>
+            <!-- Campos del formulario -->
+            <label for="nombre">Nombre de la empresa:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </li>
+        <li>
+            <label for="contacto">Contacto:</label>
+            <input type="text" id="contacto" name="contacto" required>
+        </li>
+        <li>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+        </li>
+        <li>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+        </li>
+        <li>
+            <label for="correoElectronico">Correo Electrónico:</label>
+            <input type="email" id="correoElectronico" name="correoElectronico" required>
+        </li>
+        <li>
+            <label for="observaciones">Observaciones:</label>
+            <textarea id="observaciones" name="observaciones" cols="30" rows="1"></textarea>
+        </li>
+        <li>
+            <!-- Botón de envío del formulario con el nombre 'crear' -->
+            <button type="submit" name="crear">Crear Proveedor</button>
+        </li>
+    </ul>
 </form>
 
 <?php

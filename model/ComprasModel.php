@@ -43,6 +43,7 @@
 
             if ($sql->execute()) {
                 echo "Se creo correctamente la compra";
+                header("refresh:3; url=../index.php");
             }else {
                 echo "Error al crear la compra: " . $sql->error;
             }

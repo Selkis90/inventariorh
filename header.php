@@ -11,3 +11,6 @@
 <body>
     <!-- Encabezado principal de la página -->
     <h1>Bienvenido al Sistema de Inventario</h1>
+
+
+    
