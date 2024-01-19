@@ -24,7 +24,8 @@ class StockModel
             echo "Error al crear el stock: " . $sql->error;
         }
     }
-    //Funcion para ver los datos que se ingresaron a la base de datos metodo READ
+    // Funcion para ver los datos que se ingresaron a la base de datos metodo 
+    // READ Stock
 
     public function obtenerStock(){
         global $conexion;
@@ -39,7 +40,7 @@ class StockModel
         }
 
     }
-    //
+    
 }
 ?>
 

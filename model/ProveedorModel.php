@@ -33,5 +33,20 @@ class ProveedorModel {
             echo "Error al crear proveedor: " . $sql->error;
         }
     }
+    // Funcion para ver los datos que se ingresaron a la base de datos 
+    // metodo READ Proveedores
+
+    public function obtenerProveedor(){
+        global $conexion;
+
+        $sql = "SELECT * FROM Proveedor";
+        $resultado = $conexion->query($sql);
+
+        if ($resultado->num_rows > 0) {
+            return $resultado->fetch_all(MYSQLI_ASSOC);
+        }else {
+            return array();
+        }
+    }
 }
 ?>

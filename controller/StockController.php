@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
     $controller->crearStock($Nombre_Producto, $Cantidad);
 }
 
-// ESTE IF ES VALIDACION DE VER DATOS 
+// ESTE IF ES VALIDACION DE VER DATOS el metodo READ
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["verStock"])) {
     
