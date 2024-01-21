@@ -51,7 +51,18 @@ class TransladosController {
             $Comentarios,
             $Estado
         );
-    }   
+    }  
+    
+// Funcion para ver los datos que se ingresaron los datos a la base datos metodo READ
+
+    public function verTranslado(){
+
+        $model = new TransladoModel();
+
+        $translado = $model->obtenerTranslado();
+
+        require_once '../view/view_translados.php';
+    }
 }
 
 // Verificar si la solicitud es de tipo POST y si se ha enviado el formulario de creación
@@ -101,5 +112,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
         $Comentarios,
         $Estado
     );
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $controller = new TransladosController();
+
+    $controller->verTranslado();
 }
 ?>

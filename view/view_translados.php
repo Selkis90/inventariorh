@@ -62,22 +62,3 @@
     }
     require_once '../footer.php';
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Estado
-18

@@ -101,6 +101,22 @@ class TransladoModel{
             echo "Error al crear el Translado:" . $sql->error;
         }
     }
+
+// Funcion para ver los datos que se registraron en la base de datos metodo READ
+    public function obtenerTranslado(){
+
+        global $conexion;
+
+        $sql = "SELECT * FROM Traslado";
+
+        $resultado = $conexion->query($sql);
+
+        if ($resultado->num_rows > 0) {
+            return $resultado->fetch_all(MYSQLI_ASSOC);
+        }else {
+            return array();
+        }
+    }
 }
 ?>
 
