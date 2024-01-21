@@ -40,5 +40,19 @@ class ProductoModel
             echo "Error al crear el producto: " . $sql->error;
         }
     }
+
+    public function obtenerProducto(){
+
+        global $conexion;
+        
+        $sql = "SELECT * FROM Producto";
+        $resultado = $conexion->query($sql);
+
+        if ($resultado->num_rows > 0) {
+            return $resultado->fetch_all(MYSQLI_ASSOC);
+        }else {
+            return array();
+        }
+    }
 }
 ?>

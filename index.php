@@ -8,7 +8,7 @@ require_once 'header.php';
     <li><a href="view/proveedor.php">Proveedor</a></li> <!-- Enlace para ver la sección de proveedores -->
     <li><a href="view/producto.php">Producto</a></li> <!-- Enlace para ver la sección de productos -->
     <li><a href="view/stock.php">Stock</a></li> <!-- Enlace para ver la sección de stock -->
-    <li><a href="view/ingresar_activos.php">Ingresar Activos</a></li><!-- Enlace para la sección de ingreso de activos -->
+    <li><a href="view/activos.php">Activos</a></li><!-- Enlace para la sección de ingreso de activos -->
     <li><a href="view/translados.php">Translados</a></li> <!-- Enlace para la sección de translados -->
     <li><a href="view/ajustes_inventario.php">Ajustes Inventario</a></li><!-- Enlace para la sección de ajustes de inventario -->
     <li><a href="view/compras.php">Compras</a></li> <!-- Enlace para la sección de compras -->

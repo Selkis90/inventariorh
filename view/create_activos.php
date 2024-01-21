@@ -1,11 +1,11 @@
 <?php
     require_once '../header.php';
-    require_once '../model/ingresar_activoModel.php';
+    require_once '../model/activoModel.php';
 ?>
 
 <h2>Crear activo</h2>
 
-<form action="../controller/Ingresar_activoController.php" method="post">
+<form action="../controller/activoController.php" method="post">
     <ul>
         <li>
             <label for="Tipo_Activo">Tipo Activo</label>

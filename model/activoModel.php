@@ -1,7 +1,7 @@
 <?php
 require_once '../conexion.php';
 
-class Ingresar_activoModel
+class activoModel
 {
     // Método para insertar un activo en la base de datos
     public function insertarIngreso_activo($Tipo_Activo, $Descripcion, $Marca, $Modelo, 
@@ -62,5 +62,33 @@ class Ingresar_activoModel
             throw new Exception("Fecha no válida: " . $fecha);
         }
     }
+
+// Funcion para ver datos ingresados a la base de datos con el metodo READ
+    /**
+ * Función para obtener todos los activos desde la base de datos.
+ * @return array Retorna un arreglo asociativo con la información de los 
+ * activo o un arreglo vacío si no hay resultados.
+ */
+public function obtenerActivo(){
+
+    global $conexion;
+
+    // Consulta SQL para seleccionar todos los registros de la tabla ingreso_activos.
+    $sql = "SELECT * FROM ingreso_activos";
+
+    // Ejecutar la consulta y almacenar el resultado en la variable $resultado.
+    $resultado = $conexion->query($sql);
+
+
+    // Verificar si hay resultados en la consulta.
+    if ($resultado->num_rows > 0) {
+        // Convertir el resultado a un arreglo asociativo y retornarlo.
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    } else {
+        // Si no hay resultados, retornar un arreglo vacío.
+        return array();
+    }
+}
+
 }
 ?>

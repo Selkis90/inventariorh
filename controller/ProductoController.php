@@ -15,6 +15,13 @@ class ProductoController
         // para insertar un nuevo producto en la base de datos
         $model->insertarProducto($serial, $placa, $nombre, $descripcion, $Precio_Unitario, $marca, $categoria, $stock, $Fecha_Ingreso, $estado, $peso, $dimensiones, $color);
     }
+
+// Metodo para ver datos de la base de datos READ
+    public function verProducto(){
+
+        $model = $model->obtenerProducto();
+        require_once '../view/view_producto.php';
+    }    
 }
 
 // Verifica si la solicitud es de tipo POST y si se ha enviado el formulario con el botón "crear"
@@ -39,5 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
 
     // Llama al método creaProducto con los valores obtenidos del formulario
     $controller->creaProducto($serial, $placa, $nombre, $descripcion, $Precio_Unitario, $marca, $categoria, $stock, $Fecha_Ingreso, $estado, $peso, $dimensiones, $color);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $controller = new ProductoController();
+    $controller->verProducto();
 }
 ?>
