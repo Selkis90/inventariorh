@@ -53,8 +53,7 @@ class TransladosController {
         );
     }  
     
-// Funcion para ver los datos que se ingresaron los datos a la base datos metodo READ
-
+    // Función para ver los datos ingresados en la base de datos (método READ)
     public function verTranslado(){
 
         $model = new TransladoModel();
@@ -114,10 +113,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
     );
 }
 
+// Verificar si la solicitud es de tipo POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
+    // Crear una instancia del controlador TransladosController
     $controller = new TransladosController();
 
+    // Llamar al método verTranslado para mostrar los datos ingresados en la base de datos
     $controller->verTranslado();
 }
 ?>

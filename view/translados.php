@@ -15,8 +15,6 @@ relacionadas con translados. -->
 
 <?php
     // Incluye el pie de página, que puede contener información adicional o 
-    //scripts necesarios para la página.
+    // scripts necesarios para la página.
     require_once '../footer.php';
 ?>
-
-

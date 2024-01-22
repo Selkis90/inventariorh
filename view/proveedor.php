@@ -8,7 +8,7 @@ require_once '../header.php';
     <li><a href="create_proveedor.php">Crear Proveedor</a></li> <!-- Enlace para crear un nuevo proveedor -->
     <li><a href="view_proveedor.php"> Ver Proveedor o proveedores</a></li> <!-- Enlace para ver proveedores existentes -->
     <li><a href="update_proveedor.php">Actualizar Proveedor</a></li><!-- Enlace para actualizar información de proveedores -->
-    <li><a href="delete_proveedor.php">ELiminar Proveedor</a></li> <!-- Enlace para eliminar un proveedor -->
+    <li><a href="delete_proveedor.php">Eliminar Proveedor</a></li> <!-- Enlace para eliminar un proveedor -->
     <!-- Puedes agregar más enlaces según las secciones de tu aplicación -->
 </ul>
 <?php

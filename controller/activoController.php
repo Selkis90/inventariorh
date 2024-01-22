@@ -1,31 +1,35 @@
 <?php
-// Se incluye el archivo que contiene la definición de la clase Ingresar_activoModel
+// Se incluye el archivo que contiene la definición de la clase activoModel
 require_once '../model/activoModel.php';
 
-// Definición de la clase controladora Ingresar_activoController
+// Definición de la clase controladora activoController
 class activoController
 {
     // Método para crear un nuevo ingreso de activo
     public function crearIngresar_activo($Tipo_Activo, $Descripcion, $Marca, $Modelo,
-    $Numero_Serie, $Placa, $Cantidad, $Fecha_Ingreso, $Costo_Unitario, $Estado,
-    $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion,
-    $Observaciones)
+        $Numero_Serie, $Placa, $Cantidad, $Fecha_Ingreso, $Costo_Unitario, $Estado,
+        $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion,
+        $Observaciones)
     {
-        // Se crea una instancia del modelo Ingresar_activoModel
+        // Se crea una instancia del modelo activoModel
         $model = new activoModel();
 
         // Se invoca el método insertarIngreso_activo del modelo para realizar el registro en la base de datos
         $model->insertarIngreso_activo($Tipo_Activo, $Descripcion, $Marca, $Modelo, $Numero_Serie, $Placa, $Cantidad, $Fecha_Ingreso, $Costo_Unitario, $Estado,
-        $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion, $Observaciones);
+            $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion, $Observaciones);
     }
 
-//Funcion para ver los datos ingresados a la base de datos READ
+    // Función para ver los datos ingresados a la base de datos (método READ)
     public function verActivos(){
 
+        // Se crea una instancia del modelo activoModel
         $model = new activoModel();
-        $activo = $model->obtenerActivo();
-        require_once '../view/view_activos.php';
 
+        // Se invoca el método obtenerActivo del modelo para obtener la información de los activos desde la base de datos
+        $activo = $model->obtenerActivo();
+
+        // Se incluye la vista correspondiente (view_activos.php) para mostrar la información
+        require_once '../view/view_activos.php';
     }
 
 }
@@ -61,22 +65,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
         $Fecha_Caducidad = $Fecha_Caducidad !== null ? date('Y-m-d', strtotime($Fecha_Caducidad)) : null;
         $Proxima_Fecha_Calibracion = $Proxima_Fecha_Calibracion !== null ? date('Y-m-d', strtotime($Proxima_Fecha_Calibracion)) : null;
 
-        // Se crea una instancia del controlador Ingresar_activoController
+        // Se crea una instancia del controlador activoController
         $controller = new activoController();
 
         // Se invoca el método crearIngresar_activo del controlador para procesar el ingreso de activo
         $controller->crearIngresar_activo($Tipo_Activo, $Descripcion, $Marca, $Modelo, $Numero_Serie, $Placa, $Cantidad, $Fecha_Ingreso, $Costo_Unitario, $Estado,
-        $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion, $Observaciones);
+            $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion, $Observaciones);
     } catch (Exception $e) {
         // Manejo de errores en caso de excepción
         echo "Error: " . $e->getMessage();
     }
 }
 
+// Función if para ver los datos (método READ)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
+    // Se crea una instancia del controlador activoController
     $controller = new activoController();
 
+    // Se invoca el método verActivos del controlador para mostrar la información de los activos
     $controller->verActivos();
 }
 ?>

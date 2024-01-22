@@ -64,11 +64,7 @@ class activoModel
     }
 
 // Funcion para ver datos ingresados a la base de datos con el metodo READ
-    /**
- * Función para obtener todos los activos desde la base de datos.
- * @return array Retorna un arreglo asociativo con la información de los 
- * activo o un arreglo vacío si no hay resultados.
- */
+
 public function obtenerActivo(){
 
     global $conexion;
@@ -79,7 +75,6 @@ public function obtenerActivo(){
     // Ejecutar la consulta y almacenar el resultado en la variable $resultado.
     $resultado = $conexion->query($sql);
 
-
     // Verificar si hay resultados en la consulta.
     if ($resultado->num_rows > 0) {
         // Convertir el resultado a un arreglo asociativo y retornarlo.
@@ -89,6 +84,5 @@ public function obtenerActivo(){
         return array();
     }
 }
-
 }
 ?>

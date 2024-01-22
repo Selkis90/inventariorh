@@ -1,21 +1,27 @@
 <?php
+    // Incluye archivos necesarios (header y modelo de Activo)
     require_once '../header.php';
     require_once '../model/activoModel.php';
 
+    // Crea una instancia del modelo de Activo
     $model = new activoModel();
 
     try {
+        // Intenta obtener los datos de activos desde el modelo
         $activo = $model->obtenerActivo();
     } catch (Exception $e) {
+        // Manejo de errores: imprime un mensaje de error y sale del script si ocurre un error
         echo "Error al obtener activos: " .$e->getMessage();
         exit;
     }
 
+    // Verifica si hay datos de activos para mostrar
     if (!empty ($activo)) {
+        // Inicia la tabla HTML y define las columnas
         echo "<table border='1'>
                 <tr>
                     <th>Descripcion</th>
-                    <th>Tipo_Activo	</th>
+                    <th>Tipo_Activo</th>
                     <th>Marca</th>
                     <th>Modelo</th>
                     <th>Numero_Serie</th>
@@ -32,6 +38,7 @@
                     <th>Observaciones</th>
                 </tr>";
 
+            // Itera a través de los datos de activos y muestra cada fila en la tabla
             foreach ($activo as $row) {
                 echo "<tr>
                         <td>". htmlspecialchars($row['Descripcion']) . "</td>
@@ -52,10 +59,14 @@
                         <td>". htmlspecialchars($row['Observaciones']) ."</td>
                     </tr>";
             }
+
+            // Cierra la tabla HTML
             echo "</table>";
-    }else {
+    } else {
+        // Muestra un mensaje si no hay datos de activos para mostrar
         echo "No hay datos para mostrar.";
     }
-    
+
+    // Incluye el archivo de pie de página
     require_once '../footer.php';
 ?>

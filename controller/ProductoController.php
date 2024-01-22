@@ -1,32 +1,47 @@
 <?php
-// Incluye el archivo que contiene la definición de la clase ProductoModel
+// Incluyendo el archivo que contiene la definición de la clase ProductoModel
 require_once '../model/ProductoModel.php';
 
 // Definición de la clase ProductoController
 class ProductoController
 {
-    // Método para crear un producto
+    // Función para crear un nuevo producto (método CREATE)
     public function creaProducto($serial, $placa, $nombre, $descripcion, $Precio_Unitario, $marca, $categoria, $stock, $Fecha_Ingreso, $estado, $peso, $dimensiones, $color)
     {
-        // Crea una instancia de la clase ProductoModel
+        // Creando una instancia del modelo ProductoModel
         $model = new ProductoModel();
 
-        // Llama al método insertarProducto de la instancia $model
-        // para insertar un nuevo producto en la base de datos
-        $model->insertarProducto($serial, $placa, $nombre, $descripcion, $Precio_Unitario, $marca, $categoria, $stock, $Fecha_Ingreso, $estado, $peso, $dimensiones, $color);
+        try {
+            // Llamando al método insertarProducto del modelo ProductoModel para agregar un nuevo producto
+            $model->insertarProducto($serial, $placa, $nombre, $descripcion, $Precio_Unitario, $marca, $categoria, $stock, $Fecha_Ingreso, $estado, $peso, $dimensiones, $color);
+        } catch (Exception $e) {
+            // Manejo de excepciones: Imprimir un mensaje de error en caso de fallo
+            echo "Error: " . $e->getMessage();
+        }
     }
 
-// Metodo para ver datos de la base de datos READ
-    public function verProducto(){
+    // Función para obtener y mostrar todos los productos (método READ)
+    public function verProducto()
+    {
+        // Creando una instancia del modelo ProductoModel
+        $model = new ProductoModel();
 
-        $model = $model->obtenerProducto();
-        require_once '../view/view_producto.php';
-    }    
+        try {
+            // Obteniendo datos de productos utilizando el método obtenerProducto del modelo ProductoModel
+            $productos = $model->obtenerProducto();
+            
+            // Incluyendo la vista correspondiente (view_producto.php) para mostrar los datos
+            require_once '../view/view_producto.php';
+        } catch (Exception $e) {
+            // Manejo de excepciones: Imprimir un mensaje de error en caso de fallo
+            echo "Error: " . $e->getMessage();
+        }
+    }
 }
 
-// Verifica si la solicitud es de tipo POST y si se ha enviado el formulario con el botón "crear"
+// Validación para crear un nuevo producto
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
-    // Obtiene los valores del formulario enviado por POST
+    // Obteniendo los valores del formulario creado por POST
     $serial = $_POST["serial"];
     $placa = $_POST["placa"];
     $nombre = $_POST["nombre"];
@@ -41,15 +56,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
     $dimensiones = $_POST["dimensiones"];
     $color = $_POST["color"];
 
-    // Crea una instancia de la clase ProductoController
+    // Creando una instancia de la clase ProductoController
     $controller = new ProductoController();
 
-    // Llama al método creaProducto con los valores obtenidos del formulario
+    // Llamando al método creaProducto de la instancia de ProductoController para insertar nuevos datos
     $controller->creaProducto($serial, $placa, $nombre, $descripcion, $Precio_Unitario, $marca, $categoria, $stock, $Fecha_Ingreso, $estado, $peso, $dimensiones, $color);
 }
 
+// Validación para ver productos (método READ)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Creando una instancia de la clase ProductoController
     $controller = new ProductoController();
+
+    // Llamando al método verProducto de la instancia de ProductoController para mostrar los datos
     $controller->verProducto();
 }
 ?>
