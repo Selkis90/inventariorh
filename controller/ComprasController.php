@@ -24,6 +24,15 @@
         $Detalles);
 
         }
+
+// Funcion para ver los datos creados en la base de datos metodo READ
+
+        public function verCompras(){
+
+            $model = new ComprasModel();
+            $compras = $model->obtenerCompras();
+            require_once '../view/view_compras.php';
+        }
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
         
@@ -46,5 +55,14 @@
             $Estado,
             $Observaciones,
             $Detalles);
+    }
+
+// if para ver los datos ingresados en la base de datos metodo READ
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        
+        $controller = new ComprasController();
+
+        $controller->verCompras();
     }
 ?>
