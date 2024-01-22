@@ -23,6 +23,17 @@
 
         }
 
+// Funcion para ver los datos que se ingresaron a la base de datos metodo READ
+
+        public function verAjustes_inventariosController(){
+
+            $model = new Ajustes_InventariosModel();
+
+            $Ajustes_Inventarios = $model->obtenerAjustes_Inventarios();
+
+            require_once '../view/view_Ajustes_Inventario.php';
+        }
+
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
         
@@ -44,4 +55,10 @@
         $Tipo_Ajuste,
         $Documento_Relacionado);
     }
+// Funcion if para ver los datos READ
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $controller = new Ajustes_inventariosController();
+    $controller->verAjustes_inventariosController();
+}
 ?>

@@ -48,5 +48,21 @@
         }
 
         }
+
+// Funcion para ver los datos que se ingresaron a la base de datos metodo READ
+
+        public function obtenerAjustes_Inventarios(){
+            global $conexion;
+
+            $sql = "SELECT * FROM Ajustes_Inventario";
+
+            $resultado = $conexion->query($sql);
+
+            if ($resultado->num_rows > 0) {
+                return $resultado->fetch_all(MYSQLI_ASSOC);
+            }else {
+                return array();
+            }
+        }
     }
 ?>
