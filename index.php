@@ -10,7 +10,8 @@ require_once 'header.php';
     <li><a href="view/stock.php">Stock</a></li> <!-- Enlace para ver la sección de stock -->
     <li><a href="view/activos.php">Activos</a></li><!-- Enlace para la sección de ingreso de activos -->
     <li><a href="view/translados.php">Translados</a></li> <!-- Enlace para la sección de translados -->
-    <li><a href="view/ajustes_inventario.php">Ajustes Inventario</a></li><!-- Enlace para la sección de ajustes de inventario -->
+    <li><a href="view/ajustes_inventario.php">Ajustes Inventario</a></li>
+    <!-- Enlace para la sección de ajustes de inventario -->
     <li><a href="view/compras.php">Compras</a></li> <!-- Enlace para la sección de compras -->
     <!-- Puedes agregar más enlaces según las secciones de tu aplicación -->
 </ul>
@@ -19,5 +20,3 @@ require_once 'header.php';
 // Se incluye el archivo 'footer.php', que probablemente contenga la estructura HTML del pie de página
 require_once 'footer.php';
 ?>
-
-

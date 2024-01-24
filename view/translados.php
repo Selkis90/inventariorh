@@ -1,7 +1,7 @@
 <?php
-    // Incluye el encabezado de la página, que probablemente contiene 
-    // elementos comunes como la barra de navegación y estilos.
-    require_once '../header.php';
+// Incluye el encabezado de la página, que probablemente contiene 
+// elementos comunes como la barra de navegación y estilos.
+require_once '../header.php';
 ?>
 
 <!-- Lista de enlaces de navegación para realizar diversas acciones 
@@ -14,7 +14,7 @@ relacionadas con translados. -->
 </ul>
 
 <?php
-    // Incluye el pie de página, que puede contener información adicional o 
-    // scripts necesarios para la página.
-    require_once '../footer.php';
+// Incluye el pie de página, que puede contener información adicional o 
+// scripts necesarios para la página.
+require_once '../footer.php';
 ?>

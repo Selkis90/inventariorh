@@ -5,7 +5,8 @@ require_once '../model/StockModel.php';
 // Definición de la clase StockController
 class StockController
 {
-// Función para agregar datos a la base de datos (método CREATE)
+    // -----------------------------------------Función para agregar datos a la base de datos (método CREATE)
+
     public function crearStock($Nombre_Producto, $Cantidad)
     {
         // Crea una instancia de la clase StockModel que se encuentra ubicada en model
@@ -15,31 +16,32 @@ class StockController
         $model->insertarStock($Nombre_Producto, $Cantidad);
     }
 
-// Función para ver los datos agregados en la base de datos (método READ)
+    // -----------------------------------------Función para ver los datos agregados en la base de datos (método READ)
+
     public function VerStock()
     {
         // Crea una instancia de la clase StockModel
         $model = new StockModel();
 
         // Obtiene datos de stock utilizando el método obtenerStock de la instancia de StockModel
-        $stock = $model->obtenerStock();
+        $model->obtenerStock();
 
         // Incluye la vista correspondiente (view_stock.php) para mostrar los datos
         require_once '../view/view_stock.php';
     }
 
-// Función para actualizar datos en la base de datos (método UPDATE)
-public function actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
-{
-    $model = new StockModel();
+    // ------------------------------------------Función para actualizar datos en la base de datos (método UPDATE)
 
-    // Llama al método actualizarStock de la instancia de StockModel
-    $model->actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
+    public function actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
+    {
+        $model = new StockModel();
+
+        // Llama al método actualizarStock de la instancia de StockModel
+        $model->actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
+    }
 }
 
-}
-
-// VALIDACIÓN PARA CREAR DATOS
+// ----------------------------------------------VALIDACIÓN PARA CREAR DATOS
 
 // Verifica si la solicitud es de tipo POST y si se ha enviado el formulario con el nombre "crear"
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
@@ -54,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
     $controller->crearStock($Nombre_Producto, $Cantidad);
 }
 
-// VALIDACIÓN PARA VER DATOS (método READ)
+//--------------------------------------------- VALIDACIÓN PARA VER DATOS (método READ)
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["verStock"])) {
     // Crea una instancia de la clase StockController
@@ -64,7 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["verStock"])) {
     $controller->VerStock();
 }
 
-// VALIDACIÓN PARA ACTUALIZAR DATOS (método UPDATE)
+// --------------------------------------------VALIDACIÓN PARA ACTUALIZAR DATOS (método UPDATE)
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
     // Obtiene los valores del formulario de actualización por POST
     $ID_Stock = $_POST["ID_Stock"];
@@ -77,5 +80,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
     // Llama al método actualizarStock de la instancia de StockController para actualizar los datos
     $controller->actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
 }
+
 
 ?>

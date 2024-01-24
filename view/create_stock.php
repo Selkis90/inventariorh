@@ -1,7 +1,7 @@
 <?php
-    // Incluye el encabezado de la página y el modelo relacionado con el stock.
-    require_once '../header.php';
-    require_once '../model/StockModel.php';
+// Incluye el encabezado de la página y el modelo relacionado con el stock.
+require_once '../header.php';
+require_once '../model/StockModel.php';
 ?>
 
 <!-- Título de la página -->
@@ -29,7 +29,6 @@
 </form>
 
 <?php
-    // Incluye el pie de página, que puede contener información adicional o scripts necesarios para la página.
-    require_once '../footer.php';
+// Incluye el pie de página, que puede contener información adicional o scripts necesarios para la página.
+require_once '../footer.php';
 ?>
-

@@ -11,9 +11,6 @@ $conexion = new mysqli($host, $user, $password, $bd);
 // Verificación de si la conexión tuvo éxito
 if ($conexion->connect_error) {
     // Si hay un error en la conexión, se muestra un mensaje de error y se termina la ejecución del script
-    die ("Error al conectarse a la base de datos: " . $conexion->connect_error);
+    die("Error al conectarse a la base de datos: " . $conexion->connect_error);
 }
 // Cierre del bloque PHP
-?>
-
-

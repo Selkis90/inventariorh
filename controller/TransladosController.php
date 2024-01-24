@@ -3,8 +3,9 @@
 require_once '../model/TransladoModel.php';
 
 // Definir la clase TransladosController que maneja las acciones relacionadas con los traslados
-class TransladosController {
-    
+class TransladosController
+{
+
     // Método para crear un nuevo traslado
     public function crearTranslado(
         $Tipo_Activo,
@@ -23,9 +24,9 @@ class TransladosController {
         $Cargo_Responsable,
         $Telefono_Responsable,
         $Centro_Costo_Responsable,
-        $Comentarios, 
+        $Comentarios,
         $Estado
-    ){
+    ) {
 
         // Crear una instancia del modelo TransladoModel
         $modelo = new TransladoModel();
@@ -51,10 +52,11 @@ class TransladosController {
             $Comentarios,
             $Estado
         );
-    }  
-    
+    }
+
     // Función para ver los datos ingresados en la base de datos (método READ)
-    public function verTranslado(){
+    public function verTranslado()
+    {
 
         $model = new TransladoModel();
 
@@ -66,7 +68,7 @@ class TransladosController {
 
 // Verificar si la solicitud es de tipo POST y si se ha enviado el formulario de creación
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
-    
+
     // Recoger los datos del formulario
     $Tipo_Activo = $_POST["Tipo_Activo"];
     $Fecha_Traslado = $_POST["Fecha_Traslado"];
@@ -84,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
     $Cargo_Responsable = $_POST["Cargo_Responsable"];
     $Telefono_Responsable = $_POST["Telefono_Responsable"];
     $Centro_Costo_Responsable = $_POST["Centro_Costo_Responsable"];
-    $Comentarios = $_POST["Comentarios"]; 
+    $Comentarios = $_POST["Comentarios"];
     $Estado = $_POST["Estado"];
 
     // Crear una instancia del controlador TransladosController
@@ -115,11 +117,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
 
 // Verificar si la solicitud es de tipo POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     // Crear una instancia del controlador TransladosController
     $controller = new TransladosController();
 
     // Llamar al método verTranslado para mostrar los datos ingresados en la base de datos
     $controller->verTranslado();
 }
-?>

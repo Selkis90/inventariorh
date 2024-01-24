@@ -1,7 +1,7 @@
 <?php
-    // Se incluye el archivo 'header.php' y 'activoModel.php', que probablemente contenga la estructura HTML y elementos comunes del encabezado
-    require_once '../header.php';
-    require_once '../model/activoModel.php';
+// Se incluye el archivo 'header.php' y 'activoModel.php', que probablemente contenga la estructura HTML y elementos comunes del encabezado
+require_once '../header.php';
+require_once '../model/activoModel.php';
 ?>
 
 <!-- Encabezado secundario de la página -->
@@ -98,6 +98,6 @@
 </form>
 
 <?php
-    // Se incluye el archivo 'footer.php', que probablemente contenga la estructura HTML del pie de página
-    require_once '../footer.php';
+// Se incluye el archivo 'footer.php', que probablemente contenga la estructura HTML del pie de página
+require_once '../footer.php';
 ?>

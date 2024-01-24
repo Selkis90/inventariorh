@@ -63,4 +63,3 @@ if (!empty($producto)) {
 
 // Incluye el archivo de pie de página
 require_once '../footer.php';
-?>

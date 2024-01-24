@@ -1,6 +1,6 @@
 <?php
-    // Incluye el encabezado de la página
-    require_once '../header.php';
+// Incluye el encabezado de la página
+require_once '../header.php';
 ?>
 
 <!-- Mensaje informativo para el usuario -->
@@ -17,8 +17,6 @@ relacionadas con el manejo de Stock. -->
 </ul>
 
 <?php
-    // Incluye el pie de página
-    require_once '../footer.php';
+// Incluye el pie de página
+require_once '../footer.php';
 ?>
-
-

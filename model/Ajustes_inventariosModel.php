@@ -3,16 +3,19 @@
 require_once '../conexion.php';
 
 // Definición de la clase Ajustes_InventariosModel
-class Ajustes_InventariosModel {
+class Ajustes_InventariosModel
+{
 
     // Método para insertar un nuevo registro de ajuste de inventario en la base de datos (método CREATE Ajustes_Inventarios)
-    public function Insertar_Ajustes_Inventarios($Cantidad_Ajustada,
+    public function Insertar_Ajustes_Inventarios(
+        $Cantidad_Ajustada,
         $Motivo,
         $Fecha_Ajuste,
         $Responsable_Ajuste,
         $Comentarios,
         $Tipo_Ajuste,
-        $Documento_Relacionado) {
+        $Documento_Relacionado
+    ) {
 
         // Acceso a la variable global de conexión a la base de datos
         global $conexion;
@@ -38,13 +41,16 @@ class Ajustes_InventariosModel {
         (?,?,?,?,?,?,?)");
 
         // Vincular parámetros a la instrucción preparada
-        $sql->bind_param("sssssss", $Cantidad_Ajustada,
-        $Motivo,
-        $Fecha_Ajuste,
-        $Responsable_Ajuste,
-        $Comentarios,
-        $Tipo_Ajuste,
-        $Documento_Relacionado);
+        $sql->bind_param(
+            "sssssss",
+            $Cantidad_Ajustada,
+            $Motivo,
+            $Fecha_Ajuste,
+            $Responsable_Ajuste,
+            $Comentarios,
+            $Tipo_Ajuste,
+            $Documento_Relacionado
+        );
 
         // Ejecutar la instrucción preparada y mostrar un mensaje según el resultado
         if ($sql->execute()) {
@@ -58,7 +64,8 @@ class Ajustes_InventariosModel {
     }
 
     // Método para obtener los datos almacenados en la base de datos (método READ Ajustes_Inventarios)
-    public function obtenerAjustes_Inventarios() {
+    public function obtenerAjustes_Inventarios()
+    {
         global $conexion;
 
         // Consulta SQL para seleccionar todos los registros de la tabla Ajustes_Inventario
@@ -77,4 +84,3 @@ class Ajustes_InventariosModel {
         }
     }
 }
-?>

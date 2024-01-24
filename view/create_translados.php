@@ -80,8 +80,7 @@ require_once '../model/TransladoModel.php';
         <li>
             <!-- Campo: Teléfono Responsable -->
             <label for="Telefono_Responsable">Telefono Responsable</label>
-            <input type="number" name="Telefono_Responsable" id="Telefono_Responsable" minlength="10" maxlength="15"
-                required>
+            <input type="number" name="Telefono_Responsable" id="Telefono_Responsable" minlength="10" maxlength="15" required>
         </li>
         <li>
             <!-- Campo: Centro Costo Responsable -->

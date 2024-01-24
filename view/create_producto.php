@@ -33,8 +33,7 @@ require_once '../model/ProductoModel.php';
         <!-- Campo: Precio Unitario -->
         <li>
             <label for="Precio_Unitario">Precio unidad</label>
-            <input type="number" id="Precio_Unitario" name="Precio_Unitario" step="any" placeholder="Ingrese el precio"
-                required>
+            <input type="number" id="Precio_Unitario" name="Precio_Unitario" step="any" placeholder="Ingrese el precio" required>
         </li>
         <!-- Campo: Marca -->
         <li>

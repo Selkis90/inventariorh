@@ -1,19 +1,19 @@
 <?php
-    // Incluye archivos necesarios (header y modelo de Proveedor)
-    require_once '../header.php';
-    require_once '../model/ProveedorModel.php';
+// Incluye archivos necesarios (header y modelo de Proveedor)
+require_once '../header.php';
+require_once '../model/ProveedorModel.php';
 
-    // Crea una instancia del modelo de Proveedor
-    $model = new ProveedorModel();
+// Crea una instancia del modelo de Proveedor
+$model = new ProveedorModel();
 
-    try {
-        // Intenta obtener los datos de proveedores desde el modelo
-        $proveedor = $model->obtenerProveedor();
-    } catch (Exception $e) {
-        // Manejo de errores: imprime un mensaje de error y sale del script si ocurre un error
-        echo "Error al obtener el proveedor: " . $e->getMessage();
-        exit;
-    }
+try {
+    // Intenta obtener los datos de proveedores desde el modelo
+    $proveedor = $model->obtenerProveedor();
+} catch (Exception $e) {
+    // Manejo de errores: imprime un mensaje de error y sale del script si ocurre un error
+    echo "Error al obtener el proveedor: " . $e->getMessage();
+    exit;
+}
 ?>
 
 <h2>Ver Proveedores</h2>
@@ -35,12 +35,12 @@ if (!empty($proveedor)) {
     // Itera a través de los datos de proveedores y muestra cada fila en la tabla
     foreach ($proveedor as $row) {
         echo "<tr>
-            <th>". htmlspecialchars($row['Nombre']) . "</th>
-            <th>". htmlspecialchars($row['Contacto']) . "</th>
-            <th>". htmlspecialchars($row['Telefono']) . "</th>
-            <th>". htmlspecialchars($row['Direccion']) . "</th>
-            <th>". htmlspecialchars($row['Correo_Electronico']) . "</th>
-            <th>". htmlspecialchars($row['Observaciones']) . "</th>
+            <th>" . htmlspecialchars($row['Nombre']) . "</th>
+            <th>" . htmlspecialchars($row['Contacto']) . "</th>
+            <th>" . htmlspecialchars($row['Telefono']) . "</th>
+            <th>" . htmlspecialchars($row['Direccion']) . "</th>
+            <th>" . htmlspecialchars($row['Correo_Electronico']) . "</th>
+            <th>" . htmlspecialchars($row['Observaciones']) . "</th>
         </tr>";
     }
 

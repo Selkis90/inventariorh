@@ -5,7 +5,7 @@ require_once '../conexion.php';
 // Definición de la clase StockModel
 class StockModel
 {
-// Función para insertar datos en la base de datos (método CREATE)
+// ------------------------------------------Función para insertar datos en la base de datos (método CREATE)
     public function insertarStock($Nombre_Producto, $Cantidad)
     {
         // Acceder a la variable global de conexión a la base de datos
@@ -30,7 +30,7 @@ class StockModel
         }
     }
 
-// Función para obtener los datos almacenados en la base de datos (método READ Stock)
+// -------------------------------------------Función para obtener los datos almacenados en la base de datos (método READ Stock)
     public function obtenerStock()
     {
         global $conexion;
@@ -51,30 +51,27 @@ class StockModel
         }
     }
 
-// Función para ACTUALIZAR datos en la base de datos (método UPDATE)
-public function actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
-{
-    global $conexion;
+// ------------------------------------------Función para ACTUALIZAR datos en la base de datos (método UPDATE)
+    public function actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
+    {
+        global $conexion;
 
-    // Escapar y sanitizar los datos de entrada
-    $Nuevo_Nombre_Producto = mysqli_real_escape_string($conexion, $Nuevo_Nombre_Producto);
-    $Nueva_Cantidad = mysqli_real_escape_string($conexion, $Nueva_Cantidad);
+        // Escapar y sanitizar los datos de entrada
+        $Nuevo_Nombre_Producto = mysqli_real_escape_string($conexion, $Nuevo_Nombre_Producto);
+        $Nueva_Cantidad = mysqli_real_escape_string($conexion, $Nueva_Cantidad);
 
-    // Preparar la instrucción SQL con marcadores de posición
-    $sql = $conexion->prepare("UPDATE Stock SET Nombre_Producto=?, Cantidad=? WHERE ID_Stock=?");
-    $sql->bind_param("ssi", $Nuevo_Nombre_Producto, $Nueva_Cantidad, $ID_Stock);
+        // Preparar la instrucción SQL con marcadores de posición
+        $sql = $conexion->prepare("UPDATE Stock SET Nombre_Producto=?, Cantidad=? WHERE ID_Stock=?");
+        $sql->bind_param("ssi", $Nuevo_Nombre_Producto, $Nueva_Cantidad, $ID_Stock);
 
-    // Ejecutar la instrucción preparada
-    if ($sql->execute()) {
-        echo "Stock actualizado exitosamente";
-        // Redirigir a index.php después de 3 segundos
-        header("refresh:3; url=../index.php");
-        exit;
-    } else {
-        echo "Error al actualizar el stock: " . $sql->error;
+        // Ejecutar la instrucción preparada
+        if ($sql->execute()) {
+            echo "Stock actualizado exitosamente";
+            // Redirigir a index.php después de 3 segundos
+            header("refresh:3; url=../index.php");
+            exit;
+        } else {
+            echo "Error al actualizar el stock: " . $sql->error;
+        }
     }
 }
-
-
-}
-?>

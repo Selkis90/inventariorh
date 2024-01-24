@@ -1,6 +1,6 @@
 <?php
-    // Se incluye el archivo 'header.php', que probablemente contenga la estructura HTML y elementos comunes del encabezado
-    require_once '../header.php';
+// Se incluye el archivo 'header.php', que probablemente contenga la estructura HTML y elementos comunes del encabezado
+require_once '../header.php';
 ?>
 
 <!-- Lista de enlaces de navegación para acciones relacionadas con compras -->
@@ -12,6 +12,6 @@
 </ul>
 
 <?php
-    // Se incluye el archivo 'footer.php', que probablemente contenga la estructura HTML del pie de página
-    require_once '../footer.php';
+// Se incluye el archivo 'footer.php', que probablemente contenga la estructura HTML del pie de página
+require_once '../footer.php';
 ?>

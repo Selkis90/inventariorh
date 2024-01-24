@@ -6,21 +6,51 @@ require_once '../model/activoModel.php';
 class activoController
 {
     // Método para crear un nuevo ingreso de activo
-    public function crearIngresar_activo($Tipo_Activo, $Descripcion, $Marca, $Modelo,
-        $Numero_Serie, $Placa, $Cantidad, $Fecha_Ingreso, $Costo_Unitario, $Estado,
-        $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion,
-        $Observaciones)
-    {
+    public function crearIngresar_activo(
+        $Tipo_Activo,
+        $Descripcion,
+        $Marca,
+        $Modelo,
+        $Numero_Serie,
+        $Placa,
+        $Cantidad,
+        $Fecha_Ingreso,
+        $Costo_Unitario,
+        $Estado,
+        $Ubicacion_Almacen,
+        $Garantia,
+        $Vida_Util,
+        $Fecha_Caducidad,
+        $Proxima_Fecha_Calibracion,
+        $Observaciones
+    ) {
         // Se crea una instancia del modelo activoModel
         $model = new activoModel();
 
         // Se invoca el método insertarIngreso_activo del modelo para realizar el registro en la base de datos
-        $model->insertarIngreso_activo($Tipo_Activo, $Descripcion, $Marca, $Modelo, $Numero_Serie, $Placa, $Cantidad, $Fecha_Ingreso, $Costo_Unitario, $Estado,
-            $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion, $Observaciones);
+        $model->insertarIngreso_activo(
+            $Tipo_Activo,
+            $Descripcion,
+            $Marca,
+            $Modelo,
+            $Numero_Serie,
+            $Placa,
+            $Cantidad,
+            $Fecha_Ingreso,
+            $Costo_Unitario,
+            $Estado,
+            $Ubicacion_Almacen,
+            $Garantia,
+            $Vida_Util,
+            $Fecha_Caducidad,
+            $Proxima_Fecha_Calibracion,
+            $Observaciones
+        );
     }
 
     // Función para ver los datos ingresados a la base de datos (método READ)
-    public function verActivos(){
+    public function verActivos()
+    {
 
         // Se crea una instancia del modelo activoModel
         $model = new activoModel();
@@ -31,7 +61,6 @@ class activoController
         // Se incluye la vista correspondiente (view_activos.php) para mostrar la información
         require_once '../view/view_activos.php';
     }
-
 }
 
 // Verificación de si la solicitud es de tipo POST y si se ha enviado el parámetro "crear"
@@ -52,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
         $Costo_Unitario = $_POST["Costo_Unitario"];
         $Estado = $_POST["Estado"];
         $Ubicacion_Almacen = $_POST["Ubicacion_Almacen"];
-        
+
         // Algunos campos pueden ser nulos, se verifica y asigna el valor correspondiente
         $Garantia = isset($_POST["Garantia"]) ? $_POST["Garantia"] : null;
         $Vida_Util = $_POST["Vida_Util"];
@@ -69,8 +98,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
         $controller = new activoController();
 
         // Se invoca el método crearIngresar_activo del controlador para procesar el ingreso de activo
-        $controller->crearIngresar_activo($Tipo_Activo, $Descripcion, $Marca, $Modelo, $Numero_Serie, $Placa, $Cantidad, $Fecha_Ingreso, $Costo_Unitario, $Estado,
-            $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion, $Observaciones);
+        $controller->crearIngresar_activo(
+            $Tipo_Activo,
+            $Descripcion,
+            $Marca,
+            $Modelo,
+            $Numero_Serie,
+            $Placa,
+            $Cantidad,
+            $Fecha_Ingreso,
+            $Costo_Unitario,
+            $Estado,
+            $Ubicacion_Almacen,
+            $Garantia,
+            $Vida_Util,
+            $Fecha_Caducidad,
+            $Proxima_Fecha_Calibracion,
+            $Observaciones
+        );
     } catch (Exception $e) {
         // Manejo de errores en caso de excepción
         echo "Error: " . $e->getMessage();
@@ -79,11 +124,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["crear"])) {
 
 // Función if para ver los datos (método READ)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     // Se crea una instancia del controlador activoController
     $controller = new activoController();
 
     // Se invoca el método verActivos del controlador para mostrar la información de los activos
     $controller->verActivos();
 }
-?>

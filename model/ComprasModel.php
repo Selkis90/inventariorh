@@ -3,17 +3,20 @@
 require_once '../conexion.php';
 
 // Definición de la clase ComprasModel
-class ComprasModel {
+class ComprasModel
+{
 
     // Método para insertar un nuevo registro de compra en la base de datos (método CREATE Compra)
-    public function insertarModel($Numero_Orden_Compra,
+    public function insertarModel(
+        $Numero_Orden_Compra,
         $Fecha_Compra,
         $Total_Compra,
         $Numero_Factura,
         $Metodo_Pago,
         $Estado,
         $Observaciones,
-        $Detalles) {
+        $Detalles
+    ) {
 
         // Acceso a la variable global de conexión a la base de datos
         global $conexion;
@@ -39,14 +42,17 @@ class ComprasModel {
         Detalles) VALUES (?,?,?,?,?,?,?,?)");
 
         // Vincular parámetros a la instrucción preparada
-        $sql->bind_param("ssssssss", $Numero_Orden_Compra,
-        $Fecha_Compra,
-        $Total_Compra ,
-        $Numero_Factura,
-        $Metodo_Pago,
-        $Estado,
-        $Observaciones,
-        $Detalles);
+        $sql->bind_param(
+            "ssssssss",
+            $Numero_Orden_Compra,
+            $Fecha_Compra,
+            $Total_Compra,
+            $Numero_Factura,
+            $Metodo_Pago,
+            $Estado,
+            $Observaciones,
+            $Detalles
+        );
 
         // Ejecutar la instrucción preparada y mostrar un mensaje según el resultado
         if ($sql->execute()) {
@@ -60,7 +66,8 @@ class ComprasModel {
     }
 
     // Método para obtener los datos almacenados en la base de datos (método READ Compras)
-    public function obtenerCompras() {
+    public function obtenerCompras()
+    {
         global $conexion;
 
         // Consulta SQL para seleccionar todos los registros de la tabla Compras
@@ -79,4 +86,3 @@ class ComprasModel {
         }
     }
 }
-?>

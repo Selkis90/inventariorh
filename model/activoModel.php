@@ -4,11 +4,24 @@ require_once '../conexion.php';
 class activoModel
 {
     // Método para insertar un activo en la base de datos
-    public function insertarIngreso_activo($Tipo_Activo, $Descripcion, $Marca, $Modelo, 
-        $Numero_Serie, $Placa, $Cantidad, $Fecha_Ingreso, $Costo_Unitario, $Estado,
-        $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion, 
-        $Observaciones)
-    {
+    public function insertarIngreso_activo(
+        $Tipo_Activo,
+        $Descripcion,
+        $Marca,
+        $Modelo,
+        $Numero_Serie,
+        $Placa,
+        $Cantidad,
+        $Fecha_Ingreso,
+        $Costo_Unitario,
+        $Estado,
+        $Ubicacion_Almacen,
+        $Garantia,
+        $Vida_Util,
+        $Fecha_Caducidad,
+        $Proxima_Fecha_Calibracion,
+        $Observaciones
+    ) {
         global $conexion;
 
         // Escapar caracteres especiales para evitar inyección SQL
@@ -30,12 +43,27 @@ class activoModel
         Marca, Modelo, Numero_Serie, Placa, Cantidad, Fecha_Ingreso, Costo_Unitario, 
         Estado, Ubicacion_Almacen, Garantia, Vida_Util, Fecha_Caducidad, 
         Proxima_Fecha_Calibracion, Observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    
+
         // Enlazar los parámetros a la consulta SQL
-        $sql->bind_param("ssssssssssssssss", $Tipo_Activo, $Descripcion, $Marca, $Modelo, 
-        $Numero_Serie, $Placa, $Cantidad, $Fecha_Ingreso, $Costo_Unitario, $Estado,
-        $Ubicacion_Almacen, $Garantia, $Vida_Util, $Fecha_Caducidad, $Proxima_Fecha_Calibracion, 
-        $Observaciones);
+        $sql->bind_param(
+            "ssssssssssssssss",
+            $Tipo_Activo,
+            $Descripcion,
+            $Marca,
+            $Modelo,
+            $Numero_Serie,
+            $Placa,
+            $Cantidad,
+            $Fecha_Ingreso,
+            $Costo_Unitario,
+            $Estado,
+            $Ubicacion_Almacen,
+            $Garantia,
+            $Vida_Util,
+            $Fecha_Caducidad,
+            $Proxima_Fecha_Calibracion,
+            $Observaciones
+        );
 
         // Ejecutar la consulta y manejar el resultado
         if ($sql->execute()) {
@@ -53,7 +81,7 @@ class activoModel
     {
         // Verificar si la fecha es válida en formato DD-MM-YYYY
         $date_obj = DateTime::createFromFormat('d-m-Y', $fecha);
-        
+
         // Si la fecha es válida, formatearla a 'Y-m-d'
         if ($date_obj && $date_obj->format('d-m-Y') === $fecha) {
             return $date_obj->format('Y-m-d');
@@ -63,26 +91,26 @@ class activoModel
         }
     }
 
-// Funcion para ver datos ingresados a la base de datos con el metodo READ
+    // Funcion para ver datos ingresados a la base de datos con el metodo READ
 
-public function obtenerActivo(){
+    public function obtenerActivo()
+    {
 
-    global $conexion;
+        global $conexion;
 
-    // Consulta SQL para seleccionar todos los registros de la tabla ingreso_activos.
-    $sql = "SELECT * FROM ingreso_activos";
+        // Consulta SQL para seleccionar todos los registros de la tabla ingreso_activos.
+        $sql = "SELECT * FROM ingreso_activos";
 
-    // Ejecutar la consulta y almacenar el resultado en la variable $resultado.
-    $resultado = $conexion->query($sql);
+        // Ejecutar la consulta y almacenar el resultado en la variable $resultado.
+        $resultado = $conexion->query($sql);
 
-    // Verificar si hay resultados en la consulta.
-    if ($resultado->num_rows > 0) {
-        // Convertir el resultado a un arreglo asociativo y retornarlo.
-        return $resultado->fetch_all(MYSQLI_ASSOC);
-    } else {
-        // Si no hay resultados, retornar un arreglo vacío.
-        return array();
+        // Verificar si hay resultados en la consulta.
+        if ($resultado->num_rows > 0) {
+            // Convertir el resultado a un arreglo asociativo y retornarlo.
+            return $resultado->fetch_all(MYSQLI_ASSOC);
+        } else {
+            // Si no hay resultados, retornar un arreglo vacío.
+            return array();
+        }
     }
 }
-}
-?>
