@@ -32,12 +32,13 @@ class StockController
 
     // ------------------------------------------Función para actualizar datos en la base de datos (método UPDATE)
 
-    public function actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
+    public function actualizarStockController($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
     {
+        //creo un objeto de la clase StockModel
         $model = new StockModel();
 
-        // Llama al método actualizarStock de la instancia de StockModel
-        $model->actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
+        // Llama al funcion actualizarStockModel de la clase de StockModel
+        $model->actualizarStockModel($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
     }
 }
 
@@ -74,11 +75,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
     $Nuevo_Nombre_Producto = $_POST["Nuevo_Nombre_Producto"];
     $Nueva_Cantidad = $_POST["Nueva_Cantidad"];
 
-    // Crea una instancia de la clase StockController
+    // Crea una objeto de la clase StockController
     $controller = new StockController();
 
-    // Llama al método actualizarStock de la instancia de StockController para actualizar los datos
-    $controller->actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
+    // Llama al funcion actualizarStockController de la clase de StockController para actualizar los datos
+    $controller->actualizarStockController($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
 }
 
 

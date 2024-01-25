@@ -52,7 +52,7 @@ class StockModel
     }
 
 // ------------------------------------------Función para ACTUALIZAR datos en la base de datos (método UPDATE)
-    public function actualizarStock($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
+    public function actualizarStockModel($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
     {
         global $conexion;
 
