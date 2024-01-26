@@ -14,68 +14,72 @@ $producto = $model->obtenerProducto();
 <form action="../controller/ProductoController.php" method="post">
     <ul>
         <li>
-            <label for="ID_Producto	">Seleccionar Producto</label>
-            <section name="ID_Producto" required>
+            <label for="ID_Producto	">Seleccionar Producto:</label>
+            <select name="ID_Producto" required>
                 <?php foreach ($producto as $row) : ?>
                     <option value="<?= $row['ID_Producto']; ?>">
                         <?= htmlspecialchars($row['Nombre']); ?>
                     </option>
                 <?php endforeach; ?>
-            </section>
+            </select>
         </li>
         <li>
-            <label for="Placa">Placa</label>
-            <input type="text" name="Placa" id="Placa">
+            <label for="Nuevo_Serial">Nuevo Serial</label>
+            <input type="text" name="Nuevo_Serial" id="Nuevo_Serial">
         </li>
         <li>
-            <label for="Placa">Placa</label>
-            <input type="text" name="Placa" id="Placa">
+            <label for="Nueva_Placa">Nueva Placa</label>
+            <input type="text" name="Nueva_Placa" id="Nueva_Placa">
         </li>
         <li>
-            <label for="Nombre">Nombre</label>
-            <input type="text" name="Nombre" id="Nombre">
+            <label for="Nuevo_Nombre">Nuevo Nombre</label>
+            <input type="text" name="Nuevo_Nombre" id="Nuevo_Nombre">
         </li>
         <li>
-            <label for="Descripcion">Descripcion</label>
-            <textarea name="Descripcion" id="Descripcion" cols="30" rows="1"></textarea>
+            <label for="Nueva_Descripcion">Nueva Descripcion</label>
+            <textarea name="Nueva_Descripcion" id="Nueva_Descripcion" cols="30" rows="1"></textarea>
         </li>
         <li>
-            <label for="Precio_Unitario">Precio Unitario</label>
-            <input type="number" name="Precio_Unitario" id="Precio_Unitario">
+            <label for="Nuevo_Precio_Unitario">Nuevo_Precio_Unitario</label>
+            <input type="number" name="Nuevo_Precio_Unitario" id="Nuevo_Precio_Unitario">
         </li>
         <li>
-            <label for="Marca">Marca</label>
-            <input type="text" name="Marca" id="Marca">
+            <label for="Nueva_Marca">Nueva Marca</label>
+            <input type="text" name="Nueva_Marca" id="Nueva_Marca">
         </li>
         <li>
-            <label for="Categoria">Categoria</label>
-            <input type="text" name="Categoria" id="Categoria">
+            <label for="Nueva_Categoria">Nueva_Categoria</label>
+            <input type="text" name="Nueva_Categoria" id="Nueva_Categoria">
         </li>
         <li>
-            <label for="Stock">Stock</label>
-            <input type="number" name="Stock" id="Stock">
+            <label for="Nuevo_Stock">Nuevo_Stock</label>
+            <input type="number" name="Nuevo_Stock" id="Nuevo_Stock">
         </li>
         <li>
-            <label for="Fecha_Ingreso">Fecha Ingreso</label>
-            <input type="date" name="Fecha_Ingreso" id="Fecha_Ingreso">
+            <label for="Nueva_Fecha_Ingreso">Nueva_Fecha_Ingreso</label>
+            <input type="date" name="Nueva_Fecha_Ingreso" id="Nueva_Fecha_Ingreso">
         </li>
-        <label for="Estado">Estado</label>
-        <input type="text" name="Estado" id="Estado">
+        <li>
+            <label for="Nuevo_Estado">Nuevo_Estado</label>
+            <input type="text" name="Nuevo_Estado" id="Nuevo_Estado">
+        </li>
+        <li>
+            <label for="Nuevo_Peso">Nuevo_Peso</label>
+            <input type="number" name="Nuevo_Peso" id="Nuevo_Peso">
+        </li>
+        <li>
+            <label for="Nueva_Dimensiones">Nueva_Dimensiones</label>
+            <input type="text" name="Nueva_Dimensiones" id="Nueva_Dimensiones" placeholder="Largo,Alto, Ancho">
+        </li>
+        <li>
+            <label for="Nuevo_Color">Nuevo_Color</label>
+            <input type="text" name="Nuevo_Color" id="Nuevo_Color">
+        </li>
+        <li>
+            <button type="submit" name="actualizar">Actualizar</button>
+        </li>
     </ul>
 </form>
 <?php
 require_once '../footer.php';
 ?>
-Serial
-Placa
-Nombre
-Descripcion
-Precio_Unitario
-Marca
-Categoria
-Stock
-Fecha_Ingreso
-Estado
-Peso
-Dimensiones
-Color

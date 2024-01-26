@@ -29,13 +29,50 @@ class ProductoController
         try {
             // Obteniendo datos de productos utilizando el método obtenerProducto del modelo ProductoModel
             $productos = $model->obtenerProducto();
-            
+
             // Incluyendo la vista correspondiente (view_producto.php) para mostrar los datos
             require_once '../view/view_producto.php';
         } catch (Exception $e) {
             // Manejo de excepciones: Imprimir un mensaje de error en caso de fallo
             echo "Error: " . $e->getMessage();
         }
+    }
+
+    // Funcion para ACTUALIZAR con el (METODO UPDATE)
+    public function ActualizarProductoController(
+        $ID_Producto,
+        $Nuevo_Serial,
+        $Nueva_Placa,
+        $Nuevo_Nombre,
+        $Nueva_Descripcion,
+        $Nuevo_Precio_Unitario,
+        $Nueva_Marca,
+        $Nueva_Categoria,
+        $Nuevo_Stock,
+        $Nueva_Fecha_Ingreso,
+        $Nuevo_Estado,
+        $Nuevo_Peso,
+        $Nueva_Dimensiones,
+        $Nuevo_Color
+    ) {
+
+        $model = new ProductoModel();
+        $model->ActualizarProductoModel(
+            $ID_Producto,
+            $Nuevo_Serial,
+            $Nueva_Placa,
+            $Nuevo_Nombre,
+            $Nueva_Descripcion,
+            $Nuevo_Precio_Unitario,
+            $Nueva_Marca,
+            $Nueva_Categoria,
+            $Nuevo_Stock,
+            $Nueva_Fecha_Ingreso,
+            $Nuevo_Estado,
+            $Nuevo_Peso,
+            $Nueva_Dimensiones,
+            $Nuevo_Color
+        );
     }
 }
 
@@ -71,4 +108,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Llamando al método verProducto de la instancia de ProductoController para mostrar los datos
     $controller->verProducto();
 }
-?>
+
+// validar datos del producto (METODO UPDATE)
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['actualizar'])) {
+    // obtener valores 
+    $ID_Producto = $_POST['ID_Producto'];
+    $Nuevo_Serial = $_POST['Nuevo_Serial'];
+    $Nueva_Placa = $_POST['Nueva_Placa'];
+    $Nuevo_Nombre = $_POST['Nuevo_Nombre'];
+    $Nueva_Descripcion = $_POST['Nueva_Descripcion'];
+    $Nuevo_Precio_Unitario = $_POST['Nuevo_Precio_Unitario'];
+    $Nueva_Marca = $_POST['Nueva_Marca'];
+    $Nueva_Categoria = $_POST['Nueva_Categoria'];
+    $Nuevo_Stock = $_POST['Nuevo_Stock'];
+    $Nueva_Fecha_Ingreso = $_POST['Nueva_Fecha_Ingreso'];
+    $Nuevo_Estado = $_POST['Nuevo_Estado'];
+    $Nuevo_Peso = $_POST['Nuevo_Peso'];
+    $Nueva_Dimensiones = $_POST['Nueva_Dimensiones'];
+    $Nuevo_Color = $_POST['Nuevo_Color'];
+
+    $controller = new ProductoController();
+
+    $controller->ActualizarProductoController(
+        $ID_Producto,
+        $Nuevo_Serial,
+        $Nueva_Placa,
+        $Nuevo_Nombre,
+        $Nueva_Descripcion,
+        $Nuevo_Precio_Unitario,
+        $Nueva_Marca,
+        $Nueva_Categoria,
+        $Nuevo_Stock,
+        $Nueva_Fecha_Ingreso,
+        $Nuevo_Estado,
+        $Nuevo_Peso,
+        $Nueva_Dimensiones,
+        $Nuevo_Color
+    );
+}
