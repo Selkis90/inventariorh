@@ -81,6 +81,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
     // Llama al funcion actualizarStockController de la clase de StockController para actualizar los datos
     $controller->actualizarStockController($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
 }
-
-
-?>

@@ -55,10 +55,11 @@ try {
     } else {
         // Muestra un mensaje si no hay datos de Producto para mostrar
         echo "No hay datos para mostrar.";
+        exit;
     }
 } catch (Exception $e) {
     // Manejo de errores: redirecciona a una página de error o muestra un mensaje
-    header("Location: error_page.php");
+    /* header("Location: error_page.php"); */
     exit;
 }
 

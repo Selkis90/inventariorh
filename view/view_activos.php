@@ -1,4 +1,5 @@
 <?php
+
 // Incluye archivos necesarios (header y modelo de Activo)
 require_once '../header.php';
 require_once '../model/activoModel.php';
@@ -14,7 +15,11 @@ try {
     echo "Error al obtener activos: " . $e->getMessage();
     exit;
 }
+?>
 
+<h2>ver Activos</h2>
+
+<?php
 // Verifica si hay datos de activos para mostrar
 if (!empty($activo)) {
     // Inicia la tabla HTML y define las columnas

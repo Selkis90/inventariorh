@@ -135,7 +135,7 @@ class ProductoModel
 
         if ($sql->execute()) {
             echo "Producto actualizado exitosamente";
-            header("refresh:3; url=../index.php");
+            /* header("refresh:3; url=../index.php"); */
                 exit;
         } else {
             echo "Error al actualizar el producto: " . $sql->error;

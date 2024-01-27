@@ -23,7 +23,7 @@ class StockModel
         if ($sql->execute()) {
             echo "Stock creado exitosamente";
             // Redirigir a index.php después de 3 segundos
-            header("refresh:3; url=../index.php");
+            /* header("refresh:3; url=../index.php"); */
             exit;
         } else {
             echo "Error al crear el stock: " . $sql->error;
@@ -68,7 +68,7 @@ class StockModel
         if ($sql->execute()) {
             echo "Stock actualizado exitosamente";
             // Redirigir a index.php después de 3 segundos
-            header("refresh:3; url=../index.php");
+            /* header("refresh:3; url=../index.php"); */
             exit;
         } else {
             echo "Error al actualizar el stock: " . $sql->error;
