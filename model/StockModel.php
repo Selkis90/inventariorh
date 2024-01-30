@@ -5,7 +5,7 @@ require_once '../conexion.php';
 // Definición de la clase StockModel
 class StockModel
 {
-// ------------------------------------------Función para insertar datos en la base de datos (método CREATE)
+    // ------------------------------------------Función para insertar datos en la base de datos (método CREATE)
     public function insertarStock($Nombre_Producto, $Cantidad)
     {
         // Acceder a la variable global de conexión a la base de datos
@@ -30,7 +30,7 @@ class StockModel
         }
     }
 
-// -------------------------------------------Función para obtener los datos almacenados en la base de datos (método READ Stock)
+    // -------------------------------------------Función para obtener los datos almacenados en la base de datos (método READ Stock)
     public function obtenerStock()
     {
         global $conexion;
@@ -51,7 +51,7 @@ class StockModel
         }
     }
 
-// ------------------------------------------Función para ACTUALIZAR datos en la base de datos (método UPDATE)
+    // ------------------------------------------Función para ACTUALIZAR datos en la base de datos (método UPDATE)
     public function actualizarStockModel($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
     {
         global $conexion;
