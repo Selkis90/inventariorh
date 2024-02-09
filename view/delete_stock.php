@@ -7,7 +7,7 @@ $model = new StockModel();
 
 // Intenta obtener los datos de stock desde el modelo
 try {
-    $productos = $model->obtenerStock();
+    $stock = $model->obtenerStock();
 } catch (Exception $e) {
     // Manejo de errores: puedes imprimir un mensaje de error o registrar el error según tus necesidades
     echo "Error al obtener la lista de productos: " . $e->getMessage();
@@ -21,10 +21,10 @@ try {
     <select name="ID_Stock">
         <?php
         // Obtener la lista de Nombre_Producto desde el modelo (usando la instancia $model)
-        $stocks = $model->obtenerStock();
+        $stock = $model->obtenerStock();
 
-        foreach ($stocks as $stock) {
-            echo "<option value='" . $stock['ID_Stock'] . "'>" . $stock['Nombre_Producto'] . "</option>";
+        foreach ($stock as $row) {
+            echo "<option value='" . $row['ID_Stock'] . "'>" . $row['Nombre_Producto'] . "</option>";
         }
         ?>
     </select>

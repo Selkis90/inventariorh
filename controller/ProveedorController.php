@@ -55,6 +55,21 @@ class ProveedorController
             $Nuevo_Observaciones
         );
     }
+
+
+    //funcion para eliminar con el metodo (DELETE)
+    public function eliminarProveedorController($ID_Proveedor)
+    {
+        $model = new ProveedorModel();
+
+        $eliminado = $model->eliminarProveedorModel($ID_Proveedor);
+
+        if ($eliminado) {
+            header("Location: ../view/view_proveedor.php");
+        } else {
+            echo "Error al eliminar el producto.";
+        }
+    }
 }
 
 // ----------------------------------------------VALIDACIÓN PARA CREAR DATOS (METODO CREATE)
@@ -87,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["verProveedores"])) {
 // --------------------------------------------VALIDACIÓN PARA ACTUALIZAR DATOS (método UPDATE)
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['actualizar'])) {
-    
+
     $ID_Proveedor = $_POST['ID_Proveedor'];
     $Nuevo_Nombre = $_POST['Nuevo_Nombre'];
     $Nuevo_Contacto = $_POST['Nuevo_Contacto'];
@@ -107,4 +122,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['actualizar'])) {
         $Nuevo_Correo_Electronico,
         $Nuevo_Observaciones
     );
+}
+
+// validacion de datos para eliminar (DELETE)
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
+
+    $ID_Proveedor = $_POST["ID_Proveedor"];
+
+    $controller = new ProveedorController();
+
+    $controller->eliminarProveedorController($ID_Proveedor);
 }

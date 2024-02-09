@@ -67,4 +67,20 @@ class ProveedorModel
             echo "Error al actualizar proveedor: " . $sql->error;
         }
     }
+
+    // funcion para eliminar con el metodo (DELETE)
+    public function eliminarProveedorModel($ID_Proveedor){
+        global $conexion;
+
+        $ID_Proveedor = mysqli_real_escape_string($conexion, $ID_Proveedor);
+
+        $sql = $conexion->prepare("DELETE FROM Proveedor WHERE ID_Proveedor = ?");
+        $sql->bind_param("i",$ID_Proveedor);
+
+        if ($sql->execute()) {
+            return true;
+        }else {
+            return false;
+        }
+    }
 }
