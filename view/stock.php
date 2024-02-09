@@ -20,3 +20,4 @@ relacionadas con el manejo de Stock. -->
 // Incluye el pie de página
 require_once '../footer.php';
 ?>
+

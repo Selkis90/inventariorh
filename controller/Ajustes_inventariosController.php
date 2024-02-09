@@ -44,7 +44,31 @@ class Ajustes_inventariosController
 
         // Incluye la vista correspondiente (view_Ajustes_Inventario.php) para mostrar la información
         require_once '../view/view_Ajustes_Inventario.php';
+    }   
+
+//Funcion para Actualizar con el metodo (UPDATE)
+    public function ActualizarAjusteInventarioController($ID_Ajuste,
+    $Nuevo_Cantidad_Ajustada,
+    $Nuevo_Motivo,
+    $Nuevo_Fecha_Ajuste,
+    $Nuevo_Responsable_Ajuste,
+    $Nuevo_Comentarios,
+    $Nuevo_Tipo_Ajuste,
+    $Nuevo_Documento_Relacionado){
+
+        $model = new Ajustes_InventariosModel();
+
+        $model->ActualizarAjustesInventariosModel($ID_Ajuste,
+        $Nuevo_Cantidad_Ajustada,
+        $Nuevo_Motivo,
+        $Nuevo_Fecha_Ajuste,
+        $Nuevo_Responsable_Ajuste,
+        $Nuevo_Comentarios,
+        $Nuevo_Tipo_Ajuste,
+        $Nuevo_Documento_Relacionado);
+
     }
+
 }
 
 // Verifica si la solicitud es de tipo POST y si se ha enviado el formulario con el botón "crear"
@@ -80,4 +104,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Llama al método verAjustes_inventariosController para mostrar la información de los ajustes de inventarios
     $controller->verAjustes_inventariosController();
+}
+
+// Validar datos pata el metodo (UPDATE)
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
+    
+    $ID_Ajuste = $_POST["ID_Ajuste"];
+    $Nuevo_Cantidad_Ajustada = $_POST["Nuevo_Cantidad_Ajustada"];
+    $Nuevo_Motivo = $_POST["Nuevo_Motivo"];
+    $Nuevo_Fecha_Ajuste = $_POST["Nuevo_Fecha_Ajuste"];
+    $Nuevo_Responsable_Ajuste = $_POST["Nuevo_Responsable_Ajuste"];
+    $Nuevo_Comentarios = $_POST["Nuevo_Comentarios"];
+    $Nuevo_Tipo_Ajuste = $_POST["Nuevo_Tipo_Ajuste"];
+    $Nuevo_Documento_Relacionado = $_POST["Nuevo_Documento_Relacionado"];
+
+    $controller = new Ajustes_inventariosController();
+
+    $controller->ActualizarAjusteInventarioController($ID_Ajuste,
+    $Nuevo_Cantidad_Ajustada,
+    $Nuevo_Motivo,
+    $Nuevo_Fecha_Ajuste,
+    $Nuevo_Responsable_Ajuste,
+    $Nuevo_Comentarios,
+    $Nuevo_Tipo_Ajuste,
+    $Nuevo_Documento_Relacionado);
 }

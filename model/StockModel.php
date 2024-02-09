@@ -30,7 +30,7 @@ class StockModel
         }
     }
 
-    // -------------------------------------------Función para obtener los datos almacenados en la base de datos (método READ Stock)
+    // ---------------Función para obtener los datos almacenados en la base de datos (método READ Stock)
     public function obtenerStock()
     {
         global $conexion;
@@ -51,7 +51,7 @@ class StockModel
         }
     }
 
-    // ------------------------------------------Función para ACTUALIZAR datos en la base de datos (método UPDATE)
+    // --------------------------Función para ACTUALIZAR datos en la base de datos (método UPDATE)
     public function actualizarStockModel($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
     {
         global $conexion;
@@ -68,10 +68,54 @@ class StockModel
         if ($sql->execute()) {
             echo "Stock actualizado exitosamente";
             // Redirigir a index.php después de 3 segundos
-            /* header("refresh:3; url=../index.php"); */
+            header("refresh:3; url=../index.php");
             exit;
         } else {
             echo "Error al actualizar el stock: " . $sql->error;
+        }
+    }
+
+    //----------------------------------Funcion para ELIMINAR con el metodo (DELETE)
+    public function obtenerNombreProductoPorID($ID_Stock)
+    {
+        global $conexion;
+
+        $ID_Stock = mysqli_real_escape_string($conexion, $ID_Stock);
+
+        $sql = $conexion->prepare("SELECT Nombre_Producto FROM Stock WHERE ID_Stock = ?");
+        $sql->bind_param("i", $ID_Stock);
+
+        if ($sql->execute()) {
+            $result = $sql->get_result();
+            $row = $result->fetch_assoc();
+
+            if ($row) {
+                return $row['Nombre_Producto'];
+            } else {
+                return "Nombre_Producto no encontrado";
+            }
+        } else {
+            return "Error al obtener el Nombre_Producto: " . $sql->error;
+        }
+    }
+
+    //----------------------------------Funcion para ELIMINAR con el metodo (DELETE)
+    public function eliminarStockModel($ID_Stock)
+    {
+        global $conexion;
+
+        // Escapar y sanitizar los datos de entrada
+        $ID_Stock = mysqli_real_escape_string($conexion, $ID_Stock);
+
+        // Preparar la instrucción SQL con marcadores de posición
+        $sql = $conexion->prepare("DELETE FROM Stock WHERE ID_Stock = ?");
+        $sql->bind_param("i", $ID_Stock);
+
+        // Ejecutar la instrucción preparada
+        if ($sql->execute()) {
+            return true; // Indica que la eliminación fue exitosa
+        } else {
+            return false; // Indica que hubo un error en la eliminación
         }
     }
 }

@@ -47,6 +47,30 @@ class ComprasController
         // Incluye la vista correspondiente (view_compras.php) para mostrar la información
         require_once '../view/view_compras.php';
     }
+
+//Funcion para ACTUALIZAR con el metodo (UPDATE)
+    public function ActualizarComprasController( $ID_Compra,$Nuevo_Numero_Orden_Compra,
+    $Nuevo_Fecha_Compra,
+    $Nuevo_Total_Compra,
+    $Nuevo_Numero_Factura,
+    $Nuevo_Metodo_Pago,
+    $Nuevo_Estado,
+    $Nuevo_Observaciones,
+    $Nuevo_Detalles
+   ){
+
+    $model = new ComprasModel();
+
+    $model->ActualizarComprasModel($ID_Compra,$Nuevo_Numero_Orden_Compra,
+    $Nuevo_Fecha_Compra,
+    $Nuevo_Total_Compra,
+    $Nuevo_Numero_Factura,
+    $Nuevo_Metodo_Pago,
+    $Nuevo_Estado,
+    $Nuevo_Observaciones,
+    $Nuevo_Detalles);
+
+    }
 }
 
 // Verifica si la solicitud es de tipo POST y si se ha enviado el formulario con el botón "crear"
@@ -84,4 +108,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Llama al método verCompras para mostrar la información de las compras
     $controller->verCompras();
+}
+
+//Funcion para validar datos del metodo (UPDATE)
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
+    
+    $ID_Compra = $_POST['ID_Compra'];
+    $Nuevo_Numero_Orden_Compra = $_POST['Nuevo_Numero_Orden_Compra'];
+    $Nuevo_Fecha_Compra = $_POST['Nuevo_Fecha_Compra'];
+    $Nuevo_Total_Compra = $_POST['Nuevo_Total_Compra'];
+    $Nuevo_Numero_Factura = $_POST['Nuevo_Numero_Factura'];
+    $Nuevo_Metodo_Pago = $_POST['Nuevo_Metodo_Pago'];
+    $Nuevo_Estado = $_POST['Nuevo_Estado'];
+    $Nuevo_Observaciones = $_POST['Nuevo_Observaciones'];
+    $Nuevo_Detalles = $_POST['Nuevo_Detalles'];
+
+    $controller = new ComprasController();
+    
+    $controller->ActualizarComprasController($ID_Compra,
+    $Nuevo_Numero_Orden_Compra,
+    $Nuevo_Fecha_Compra,
+    $Nuevo_Total_Compra,
+    $Nuevo_Numero_Factura,
+    $Nuevo_Metodo_Pago,
+    $Nuevo_Estado,
+    $Nuevo_Observaciones,
+    $Nuevo_Detalles);
 }

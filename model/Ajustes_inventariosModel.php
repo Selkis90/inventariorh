@@ -83,4 +83,59 @@ class Ajustes_InventariosModel
             return array();
         }
     }
+
+    // Funcion para Actualizar con el metodo (UPDATE)
+
+    public function ActualizarAjustesInventariosModel(
+        $ID_Ajuste,
+        $Nuevo_Cantidad_Ajustada,
+        $Nuevo_Motivo,
+        $Nuevo_Fecha_Ajuste,
+        $Nuevo_Responsable_Ajuste,
+        $Nuevo_Comentarios,
+        $Nuevo_Tipo_Ajuste,
+        $Nuevo_Documento_Relacionado
+    ) {
+
+        global $conexion;
+
+        $Nuevo_Cantidad_Ajustada = mysqli_real_escape_string($conexion, $Nuevo_Cantidad_Ajustada);
+        $Nuevo_Motivo = mysqli_real_escape_string($conexion, $Nuevo_Motivo);
+        $Nuevo_Fecha_Ajuste = mysqli_real_escape_string($conexion, $Nuevo_Fecha_Ajuste);
+        $Nuevo_Responsable_Ajuste = mysqli_real_escape_string($conexion, $Nuevo_Responsable_Ajuste);
+        $Nuevo_Comentarios = mysqli_real_escape_string($conexion, $Nuevo_Comentarios);
+        $Nuevo_Tipo_Ajuste = mysqli_real_escape_string($conexion, $Nuevo_Tipo_Ajuste);
+        $Nuevo_Documento_Relacionado = mysqli_real_escape_string($conexion, $Nuevo_Documento_Relacionado);
+
+        $sql = $conexion->prepare("UPDATE Ajustes_Inventario SET Cantidad_Ajustada = ?,
+        Motivo = ?,
+        Fecha_Ajuste = ?,
+        Responsable_Ajuste = ?,
+        Comentarios = ?,
+        Tipo_Ajuste = ?,
+        Documento_Relacionado = ?
+        WHERE ID_Ajuste=?");
+
+        $sql->bind_param(
+            "sssssssi",
+            $Nuevo_Cantidad_Ajustada,
+            $Nuevo_Motivo,
+            $Nuevo_Fecha_Ajuste,
+            $Nuevo_Responsable_Ajuste,
+            $Nuevo_Comentarios,
+            $Nuevo_Tipo_Ajuste,
+            $Nuevo_Documento_Relacionado,
+            $ID_Ajuste
+        );
+
+        try {
+            if ($sql->execute()) {
+                return "Inventario Actualizado con éxito";
+            } else {
+                return "Error al Actualizar Inventario: " . $sql->error;
+            }
+        } catch (mysqli_sql_exception $e) {
+            return "Excepción SQL: " . $e->getMessage();
+        }
+    }        
 }

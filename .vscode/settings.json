@@ -2,6 +2,7 @@
     "cSpell.words": [
         "Accediendo",
         "Creando",
+        "desplegable",
         "Devolviendo",
         "Ejecutando",
         "elegir",
@@ -13,7 +14,11 @@
         "Redirigiendo",
         "sanitizando",
         "selección",
+        "Selecciona",
         "Verificando",
         "Vinculando"
+    ],
+    "cSpell.ignoreWords": [
+        "ssssssssi"
     ]
 }

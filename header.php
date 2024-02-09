@@ -12,6 +12,10 @@
     <link rel="icon" href="/img/logo inventariorh.jpg" type="image/x-icon">
     <!-- Enlace al archivo de estilos externo ubicado en la carpeta 'css' -->
     <link rel="stylesheet" href="../css/styles.css">
+    <!-- Incluir Bootstrap (agrega esto en tu encabezado) -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
 </head>
 
 <body>

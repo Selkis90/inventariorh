@@ -40,6 +40,25 @@ class StockController
         // Llama al funcion actualizarStockModel de la clase de StockModel
         $model->actualizarStockModel($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
     }
+
+    // --------------------------------------------Funcion para eliminar con el metodo (DELETE)
+    public function eliminarStock($ID_Stock)
+    {
+        // Crea una instancia de la clase StockModel
+        $model = new StockModel();
+
+        // Llama al método eliminarStockModel de la instancia de StockModel
+        $eliminado = $model->eliminarStockModel($ID_Stock);
+
+        if ($eliminado) {
+            // Redirige a la página de ver stock después de eliminar el producto
+            header("Location: ../view/view_stock.php");
+            exit;
+        } else {
+            // Manejo de errores en caso de que no se pueda eliminar el producto
+            echo "Error al eliminar el producto. " ;
+        }
+    }
 }
 
 // ----------------------------------------------VALIDACIÓN PARA CREAR DATOS
@@ -80,4 +99,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
 
     // Llama al funcion actualizarStockController de la clase de StockController para actualizar los datos
     $controller->actualizarStockController($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
+}
+
+// Verifica si la solicitud es de tipo POST y si se ha enviado el formulario para eliminar un producto
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
+    // Obtiene el ID del producto a eliminar
+    $ID_Stock = $_POST["ID_Stock"];
+
+    // Crea una instancia de la clase StockController
+    $controller = new StockController();
+
+    // Llama al método eliminarStock de la instancia de StockController para eliminar el producto
+    $controller->eliminarStock($ID_Stock);
 }

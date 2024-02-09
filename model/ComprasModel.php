@@ -85,4 +85,57 @@ class ComprasModel
             return array();
         }
     }
+
+    // Funcion para ACTUALIZAR con el metodo (UPDATE)
+    public function ActualizarComprasModel(
+        $ID_Compra,
+        $Nuevo_Numero_Orden_Compra,
+        $Nuevo_Fecha_Compra,
+        $Nuevo_Total_Compra,
+        $Nuevo_Numero_Factura,
+        $Nuevo_Metodo_Pago,
+        $Nuevo_Estado,
+        $Nuevo_Observaciones,
+        $Nuevo_Detalles
+    ) {
+        global $conexion;
+
+        $Nuevo_Numero_Orden_Compra = mysqli_real_escape_string($conexion, $Nuevo_Numero_Orden_Compra);
+        $Nuevo_Fecha_Compra = mysqli_real_escape_string($conexion, $Nuevo_Fecha_Compra);
+        $Nuevo_Total_Compra = mysqli_real_escape_string($conexion, $Nuevo_Total_Compra);
+        $Nuevo_Numero_Factura = mysqli_real_escape_string($conexion, $Nuevo_Numero_Factura);
+        $Nuevo_Metodo_Pago = mysqli_real_escape_string($conexion, $Nuevo_Metodo_Pago);
+        $Nuevo_Estado = mysqli_real_escape_string($conexion, $Nuevo_Estado);
+        $Nuevo_Observaciones = mysqli_real_escape_string($conexion, $Nuevo_Observaciones);
+        $Nuevo_Detalles = mysqli_real_escape_string($conexion, $Nuevo_Detalles);
+
+        $sql = $conexion->prepare("UPDATE Compras SET 
+        Numero_Orden_Compra = ?,
+        Fecha_Compra = ?,
+        Total_Compra = ?,
+        Numero_Factura = ?,
+        Metodo_Pago = ?,
+        Estado = ?,
+        Observaciones = ?,
+        Detalles = ?
+        WHERE ID_Compra = ?");
+
+        $sql->bind_param("ssssssssi", $Nuevo_Numero_Orden_Compra,
+        $Nuevo_Fecha_Compra,
+        $Nuevo_Total_Compra,
+        $Nuevo_Numero_Factura,
+        $Nuevo_Metodo_Pago,
+        $Nuevo_Estado,
+        $Nuevo_Observaciones,
+        $Nuevo_Detalles,
+        $ID_Compra);
+
+        if ($sql->execute()) {
+            return "La compra se Actualizo exitosamente";
+            header("refresh:3; url=../index.php");
+            exit;
+        }else {
+            return "error al Actualizar compra: "  .$sql->error;
+        }
+    }
 }
