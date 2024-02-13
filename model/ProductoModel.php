@@ -141,4 +141,21 @@ class ProductoModel
             echo "Error al actualizar el producto: " . $sql->error;
         }
     }
+
+    // funcion para eliminar con el metodo (DELETE)
+
+    public function eliminarProductoModel($ID_Producto){
+        global $conexion;
+
+        $ID_Producto = mysqli_real_escape_string($conexion, $ID_Producto);
+
+        $sql = $conexion->prepare("DELETE FROM Producto WHERE ID_Producto=?");
+        $sql->bind_param("i", $ID_Producto);
+
+        if ($sql->execute()) {
+            return true;
+        }else {
+            return false;
+        }
+    } 
 }

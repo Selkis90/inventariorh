@@ -17,7 +17,7 @@ try {
 
 <form method="post" action="../controller/StockController.php">
     <!-- Lista desplegable para seleccionar el Nombre_Producto a eliminar -->
-    <label for="Nombre_Producto">Selecciona el Nombre_Producto a Eliminar:</label>
+    <label for="Nombre_Producto">Selecciona el Nombre del stock a Eliminar:</label>
     <select name="ID_Stock">
         <?php
         // Obtener la lista de Nombre_Producto desde el modelo (usando la instancia $model)

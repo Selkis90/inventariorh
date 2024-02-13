@@ -74,6 +74,22 @@ class ProductoController
             $Nuevo_Color
         );
     }
+
+    //--------------------------- funcion para eliminar con el metodo (DELETE)
+    public function eliminarProductoController($ID_Producto)
+    {
+
+        $model = new ProductoModel();
+
+        $eliminar = $model->eliminarProductoModel($ID_Producto);
+
+        if ($eliminar) {
+            header("Location: ../view/view_producto.php");
+            exit;
+        } else {
+            echo "Error al eliminar el producto:";
+        }
+    }
 }
 
 // Validación para crear un nuevo producto
@@ -146,4 +162,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['actualizar'])) {
         $Nueva_Dimensiones,
         $Nuevo_Color
     );
+}
+
+// validar datos para el metodo (DELETE)
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
+
+    $ID_Producto = $_POST["ID_Producto"];
+
+    $controller = new ProductoController();
+
+    $controller->eliminarProductoController($ID_Producto);
 }
