@@ -202,4 +202,21 @@ class activoModel
             echo "Error al actualizar el activo: " . $sql->error;
         }
     }
+
+    //funcion para eliminar con el metodo (DELETE)
+    public function eliminarActivoModel($ID_Ingreso){
+        global $conexion;
+
+        $ID_Ingreso = mysqli_real_escape_string($conexion, $ID_Ingreso);
+
+        $sql = $conexion->prepare("DELETE FROM ingreso_activos WHERE ID_Ingreso = ?");
+        $sql->bind_param("i", $ID_Ingreso);
+
+        if ($sql->execute()) {
+           return true;
+        }else {
+            return false;
+        }
+    
+    }
 }

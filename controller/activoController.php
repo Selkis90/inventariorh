@@ -106,6 +106,21 @@ class activoController
             $Nuevo_Observaciones
         );
     }
+
+    // funcion para eliminar con el metodo (DELETE)
+    public function eliminarActivoController($ID_Ingreso){
+
+        $model = new activoModel();
+
+        $eliminar = $model->eliminarActivoModel($ID_Ingreso);
+
+        if ($eliminar) {
+            header("Location: ../view/view_activos.php");
+            exit;
+        }else {
+            echo "Error al eliminar el activo.";
+        }
+    }
 }
 
 // Verificación de si la solicitud es de tipo POST y si se ha enviado el parámetro "crear"
@@ -221,4 +236,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
         $Nuevo_Proxima_Fecha_Calibracion,
         $Nuevo_Observaciones
     );
+}
+
+// validar datos para eliminar con el metodo (DELETE)
+if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_POST['eliminar'])) {
+    $ID_Ingreso = $_POST["ID_Ingreso"];
+
+    $controller = new activoController();
+
+    $controller->eliminarActivoController($ID_Ingreso);
 }
