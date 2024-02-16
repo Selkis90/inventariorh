@@ -110,8 +110,23 @@ class TransladosController
         $Nuevo_Centro_Costo_Responsable,
         $Nuevo_Comentarios,
         $Nuevo_Estado);
-
     }
+
+    //Funcion para eliminar con el metodo (DELETE)
+    public function eliminarTransladoController($ID_Traslado){
+
+        $model = new TransladoModel();
+
+        $eliminado = $model->eliminarTransladoModel($ID_Traslado);
+
+        if ($eliminado) {
+            header("Location: ../view/view_translados.php");
+            exit;
+        }else {
+            echo "Error al eliminar traslado.";
+        }
+    }
+
 }
 
 // Verificar si la solicitud es de tipo POST y si se ha enviado el formulario de creación
@@ -219,4 +234,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['actualizar'])) {
         $Nuevo_Comentarios,
         $Nuevo_Estado);
 
+}
+
+// validar datos para eliminar 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
+    
+    $ID_Traslado = $_POST["ID_Traslado"];
+
+    $controller = new TransladosController();
+
+    $controller->eliminarTransladoController($ID_Traslado);
 }

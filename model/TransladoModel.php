@@ -221,4 +221,22 @@ class TransladoModel
             return "Error al actualizar Traslados: " .$sql->error;
         }
     }
+
+    //Funcion para eliminar con el metodo (DELETE).
+    public function eliminarTransladoModel($ID_Traslado){
+        
+        global $conexion;
+
+        $ID_Traslado = mysqli_real_escape_string($conexion, $ID_Traslado);
+
+        $sql = $conexion->prepare("DELETE FROM Traslado WHERE ID_Traslado = ?");
+        $sql->bind_param("i", $ID_Traslado);
+
+        if ($sql->execute()) {
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 }
