@@ -137,5 +137,22 @@ class Ajustes_InventariosModel
         } catch (mysqli_sql_exception $e) {
             return "Excepción SQL: " . $e->getMessage();
         }
-    }        
+    }   
+    
+    //Funcion para eliminar con el metodo(DELETE)
+    public function eliminarAjusteInventarioModel($ID_Ajuste){
+        global $conexion;
+
+        $ID_Ajuste = mysqli_real_escape_string($conexion, $ID_Ajuste);
+
+        $sql = $conexion->prepare("DELETE FROM Ajustes_Inventario WHERE ID_Ajuste = ?");
+        $sql->bind_param("i", $ID_Ajuste);
+
+        if ($sql->execute()) {
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 }

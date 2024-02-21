@@ -44,31 +44,49 @@ class Ajustes_inventariosController
 
         // Incluye la vista correspondiente (view_Ajustes_Inventario.php) para mostrar la información
         require_once '../view/view_Ajustes_Inventario.php';
-    }   
+    }
 
-//Funcion para Actualizar con el metodo (UPDATE)
-    public function ActualizarAjusteInventarioController($ID_Ajuste,
-    $Nuevo_Cantidad_Ajustada,
-    $Nuevo_Motivo,
-    $Nuevo_Fecha_Ajuste,
-    $Nuevo_Responsable_Ajuste,
-    $Nuevo_Comentarios,
-    $Nuevo_Tipo_Ajuste,
-    $Nuevo_Documento_Relacionado){
-
-        $model = new Ajustes_InventariosModel();
-
-        $model->ActualizarAjustesInventariosModel($ID_Ajuste,
+    //Funcion para Actualizar con el metodo (UPDATE)
+    public function ActualizarAjusteInventarioController(
+        $ID_Ajuste,
         $Nuevo_Cantidad_Ajustada,
         $Nuevo_Motivo,
         $Nuevo_Fecha_Ajuste,
         $Nuevo_Responsable_Ajuste,
         $Nuevo_Comentarios,
         $Nuevo_Tipo_Ajuste,
-        $Nuevo_Documento_Relacionado);
+        $Nuevo_Documento_Relacionado
+    ) {
 
+        $model = new Ajustes_InventariosModel();
+
+        $model->ActualizarAjustesInventariosModel(
+            $ID_Ajuste,
+            $Nuevo_Cantidad_Ajustada,
+            $Nuevo_Motivo,
+            $Nuevo_Fecha_Ajuste,
+            $Nuevo_Responsable_Ajuste,
+            $Nuevo_Comentarios,
+            $Nuevo_Tipo_Ajuste,
+            $Nuevo_Documento_Relacionado
+        );
     }
 
+    // funcion para eliminar con el metodo (DELETE)
+    public function eliminarAjusteInventarioController($ID_Ajuste)
+    {
+
+        $model = new Ajustes_InventariosModel();
+
+        $eliminar = $model->eliminarAjusteInventarioModel($ID_Ajuste);
+
+        if ($eliminar) {
+            header("Location: ../view/view_Ajustes_Inventario.php");
+            exit;
+        } else {
+            echo "Error al eliminar el responsable";
+        }
+    }
 }
 
 // Verifica si la solicitud es de tipo POST y si se ha enviado el formulario con el botón "crear"
@@ -109,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Validar datos pata el metodo (UPDATE)
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
-    
+
     $ID_Ajuste = $_POST["ID_Ajuste"];
     $Nuevo_Cantidad_Ajustada = $_POST["Nuevo_Cantidad_Ajustada"];
     $Nuevo_Motivo = $_POST["Nuevo_Motivo"];
@@ -121,12 +139,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
 
     $controller = new Ajustes_inventariosController();
 
-    $controller->ActualizarAjusteInventarioController($ID_Ajuste,
-    $Nuevo_Cantidad_Ajustada,
-    $Nuevo_Motivo,
-    $Nuevo_Fecha_Ajuste,
-    $Nuevo_Responsable_Ajuste,
-    $Nuevo_Comentarios,
-    $Nuevo_Tipo_Ajuste,
-    $Nuevo_Documento_Relacionado);
+    $controller->ActualizarAjusteInventarioController(
+        $ID_Ajuste,
+        $Nuevo_Cantidad_Ajustada,
+        $Nuevo_Motivo,
+        $Nuevo_Fecha_Ajuste,
+        $Nuevo_Responsable_Ajuste,
+        $Nuevo_Comentarios,
+        $Nuevo_Tipo_Ajuste,
+        $Nuevo_Documento_Relacionado
+    );
+}
+
+// validar datos de eliminacion
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
+
+    $ID_Ajuste = $_POST["ID_Ajuste"];
+
+    $controller = new Ajustes_inventariosController();
+
+    $controller->eliminarAjusteInventarioController($ID_Ajuste);
 }
