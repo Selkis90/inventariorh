@@ -48,28 +48,49 @@ class ComprasController
         require_once '../view/view_compras.php';
     }
 
-//Funcion para ACTUALIZAR con el metodo (UPDATE)
-    public function ActualizarComprasController( $ID_Compra,$Nuevo_Numero_Orden_Compra,
-    $Nuevo_Fecha_Compra,
-    $Nuevo_Total_Compra,
-    $Nuevo_Numero_Factura,
-    $Nuevo_Metodo_Pago,
-    $Nuevo_Estado,
-    $Nuevo_Observaciones,
-    $Nuevo_Detalles
-   ){
+    //Funcion para ACTUALIZAR con el metodo (UPDATE)
+    public function ActualizarComprasController(
+        $ID_Compra,
+        $Nuevo_Numero_Orden_Compra,
+        $Nuevo_Fecha_Compra,
+        $Nuevo_Total_Compra,
+        $Nuevo_Numero_Factura,
+        $Nuevo_Metodo_Pago,
+        $Nuevo_Estado,
+        $Nuevo_Observaciones,
+        $Nuevo_Detalles
+    ) {
 
-    $model = new ComprasModel();
+        $model = new ComprasModel();
 
-    $model->ActualizarComprasModel($ID_Compra,$Nuevo_Numero_Orden_Compra,
-    $Nuevo_Fecha_Compra,
-    $Nuevo_Total_Compra,
-    $Nuevo_Numero_Factura,
-    $Nuevo_Metodo_Pago,
-    $Nuevo_Estado,
-    $Nuevo_Observaciones,
-    $Nuevo_Detalles);
+        $model->ActualizarComprasModel(
+            $ID_Compra,
+            $Nuevo_Numero_Orden_Compra,
+            $Nuevo_Fecha_Compra,
+            $Nuevo_Total_Compra,
+            $Nuevo_Numero_Factura,
+            $Nuevo_Metodo_Pago,
+            $Nuevo_Estado,
+            $Nuevo_Observaciones,
+            $Nuevo_Detalles
+        );
+    }
 
+    // funcion para eliminar con el metodo (DELETE).
+
+    public function eliminarCompraController($ID_Compra)
+    {
+
+        $model = new ComprasModel();
+
+        $eliminar = $model->eliminarCompraModel($ID_Compra);
+
+        if ($eliminar) {
+            header("Location: ../view/view_compras.php");
+            exit;
+        } else {
+            echo "Error al eliminar la compra";
+        }
     }
 }
 
@@ -113,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //Funcion para validar datos del metodo (UPDATE)
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
-    
+
     $ID_Compra = $_POST['ID_Compra'];
     $Nuevo_Numero_Orden_Compra = $_POST['Nuevo_Numero_Orden_Compra'];
     $Nuevo_Fecha_Compra = $_POST['Nuevo_Fecha_Compra'];
@@ -125,14 +146,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["actualizar"])) {
     $Nuevo_Detalles = $_POST['Nuevo_Detalles'];
 
     $controller = new ComprasController();
-    
-    $controller->ActualizarComprasController($ID_Compra,
-    $Nuevo_Numero_Orden_Compra,
-    $Nuevo_Fecha_Compra,
-    $Nuevo_Total_Compra,
-    $Nuevo_Numero_Factura,
-    $Nuevo_Metodo_Pago,
-    $Nuevo_Estado,
-    $Nuevo_Observaciones,
-    $Nuevo_Detalles);
+
+    $controller->ActualizarComprasController(
+        $ID_Compra,
+        $Nuevo_Numero_Orden_Compra,
+        $Nuevo_Fecha_Compra,
+        $Nuevo_Total_Compra,
+        $Nuevo_Numero_Factura,
+        $Nuevo_Metodo_Pago,
+        $Nuevo_Estado,
+        $Nuevo_Observaciones,
+        $Nuevo_Detalles
+    );
+}
+
+// validar los datos a eliminar con el metodo (DELETE)
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
+
+    $ID_Compra = $_POST["ID_Compra"];
+
+    $controller = new ComprasController();
+
+    $controller->eliminarCompraController($ID_Compra);
 }

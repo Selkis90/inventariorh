@@ -120,22 +120,43 @@ class ComprasModel
         Detalles = ?
         WHERE ID_Compra = ?");
 
-        $sql->bind_param("ssssssssi", $Nuevo_Numero_Orden_Compra,
-        $Nuevo_Fecha_Compra,
-        $Nuevo_Total_Compra,
-        $Nuevo_Numero_Factura,
-        $Nuevo_Metodo_Pago,
-        $Nuevo_Estado,
-        $Nuevo_Observaciones,
-        $Nuevo_Detalles,
-        $ID_Compra);
+        $sql->bind_param(
+            "ssssssssi",
+            $Nuevo_Numero_Orden_Compra,
+            $Nuevo_Fecha_Compra,
+            $Nuevo_Total_Compra,
+            $Nuevo_Numero_Factura,
+            $Nuevo_Metodo_Pago,
+            $Nuevo_Estado,
+            $Nuevo_Observaciones,
+            $Nuevo_Detalles,
+            $ID_Compra
+        );
 
         if ($sql->execute()) {
             return "La compra se Actualizo exitosamente";
             header("refresh:3; url=../index.php");
             exit;
-        }else {
-            return "error al Actualizar compra: "  .$sql->error;
+        } else {
+            return "error al Actualizar compra: "  . $sql->error;
+        }
+    }
+
+    // funcion para eliminar con el metodo (DELETE)
+    public function eliminarCompraModel($ID_Compra)
+    {
+        global $conexion;
+
+        $ID_Compra = mysqli_real_escape_string($conexion, $ID_Compra);
+
+        $sql = $conexion->prepare("DELETE FROM Compras WHERE ID_Compra = ?");
+
+        $sql->bind_param("i", $ID_Compra);
+
+        if ($sql->execute()) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

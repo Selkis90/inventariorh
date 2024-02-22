@@ -112,3 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["eliminar"])) {
     // Llama al método eliminarStock de la instancia de StockController para eliminar el producto
     $controller->eliminarStock($ID_Stock);
 }
+
+
+
+/* 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 */
