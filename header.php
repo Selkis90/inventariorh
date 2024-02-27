@@ -23,7 +23,7 @@
     <h1>Bienvenido al Sistema de Inventario</h1>
     <!--<label for="menu1">Regresar al menu principal</label> 
         Aquí irían más elementos HTML que forman el contenido de la página -->
-    <form action="/index.php" method="post">
+    <form action="/principal.php" method="post">
 
         <button type="submit" name="Regresar">Regresar al menu principal</button>
     </form>

@@ -55,8 +55,8 @@ class Ajustes_InventariosModel
         // Ejecutar la instrucción preparada y mostrar un mensaje según el resultado
         if ($sql->execute()) {
             echo "Ajuste de inventario creado exitosamente";
-            // Redirigir a index.php después de 3 segundos
-            header("refresh:3; url=../index.php");
+            // Redirigir a principal.php después de 3 segundos
+            header("refresh:3; url=../principal.php");
             exit;
         } else {
             echo "Error al crear los ajustes de inventario: " . $sql->error;

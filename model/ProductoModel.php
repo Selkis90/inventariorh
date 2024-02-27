@@ -35,8 +35,8 @@ class ProductoModel
         // Ejecutando la instrucción preparada
         if ($sql->execute()) {
             echo "Producto creado exitosamente";
-            // Redirigiendo a index.php después de 3 segundos
-            header("refresh:3; url=../index.php");
+            // Redirigiendo a principal.php después de 3 segundos
+            header("refresh:3; url=../principal.php");
             exit;
         } else {
             // Lanzando una excepción en caso de error
@@ -135,7 +135,7 @@ class ProductoModel
 
         if ($sql->execute()) {
             echo "Producto actualizado exitosamente";
-            /* header("refresh:3; url=../index.php"); */
+            /* header("refresh:3; url=../principal.php"); */
                 exit;
         } else {
             echo "Error al actualizar el producto: " . $sql->error;

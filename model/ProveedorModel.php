@@ -21,7 +21,7 @@ class ProveedorModel
 
         if ($sql->execute()) {
             echo "Proveedor creado exitosamente";
-            header("refresh:3; url=../index.php");
+            header("refresh:3; url=../principal.php");
             exit;
         } else {
             echo "Error al crear proveedor: " . $sql->error;
@@ -61,7 +61,7 @@ class ProveedorModel
 
         if ($sql->execute()) {
             echo "Proveedor actualizado exitosamente.";
-            header("refresh:3; url=../index.php");
+            header("refresh:3; url=../principal.php");
             exit;
         } else {
             echo "Error al actualizar proveedor: " . $sql->error;

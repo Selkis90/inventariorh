@@ -69,7 +69,7 @@ class activoModel
         if ($sql->execute()) {
             echo "Ingresar activos creado con éxito";
             // Redirigir a la página principal después de la inserción
-            /* header("refresh:3; url=../index.php"); */
+            /* header("refresh:3; url=../principal.php"); */
             exit;
         } else {
             echo "Error al crear ingresar activos";
@@ -195,16 +195,17 @@ class activoModel
         );
         if ($sql->execute()) {
             echo "Activo actualizado exitosamente";
-    
-            /* header("refresh:3; url=../index.php"); */
-        exit;
-        }else {
+
+            /* header("refresh:3; url=../principal.php"); */
+            exit;
+        } else {
             echo "Error al actualizar el activo: " . $sql->error;
         }
     }
 
     //funcion para eliminar con el metodo (DELETE)
-    public function eliminarActivoModel($ID_Ingreso){
+    public function eliminarActivoModel($ID_Ingreso)
+    {
         global $conexion;
 
         $ID_Ingreso = mysqli_real_escape_string($conexion, $ID_Ingreso);
@@ -213,10 +214,9 @@ class activoModel
         $sql->bind_param("i", $ID_Ingreso);
 
         if ($sql->execute()) {
-           return true;
-        }else {
+            return true;
+        } else {
             return false;
         }
-    
     }
 }

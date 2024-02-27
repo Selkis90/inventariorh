@@ -99,8 +99,8 @@ class TransladoModel
         // Ejecutar la instrucción preparada
         if ($sql->execute()) {
             echo "Translado creado exitosamente";
-            // Redirigir a index.php después de 3 segundos
-            header("refresh:3; url=../index.php");
+            // Redirigir a principal.php después de 3 segundos
+            header("refresh:3; url=../principal.php");
             exit;
         } else {
             echo "Error al crear el Translado:" . $sql->error;

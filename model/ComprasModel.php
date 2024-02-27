@@ -57,8 +57,8 @@ class ComprasModel
         // Ejecutar la instrucción preparada y mostrar un mensaje según el resultado
         if ($sql->execute()) {
             echo "Compra creada exitosamente";
-            // Redirigir a index.php después de 3 segundos
-            header("refresh:3; url=../index.php");
+            // Redirigir a principal.php después de 3 segundos
+            header("refresh:3; url=../principal.php");
             exit;
         } else {
             echo "Error al crear la compra: " . $sql->error;
@@ -135,7 +135,7 @@ class ComprasModel
 
         if ($sql->execute()) {
             return "La compra se Actualizo exitosamente";
-            header("refresh:3; url=../index.php");
+            header("refresh:3; url=../principal.php");
             exit;
         } else {
             return "error al Actualizar compra: "  . $sql->error;
