@@ -13,7 +13,7 @@ try {
 ?>
 
 <form action="../controller/ProveedorController.php" method="post">
-    <label for="	Nombre">Seleccione el nombre del proveedor</label>
+    <label for="Nombre">Seleccione el nombre del proveedor</label>
     <select name="ID_Proveedor" id="ID_Proveedor">
         <?php
         $proveedor = $model->obtenerProveedor();

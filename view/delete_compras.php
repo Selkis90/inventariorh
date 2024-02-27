@@ -8,12 +8,13 @@
         $compra = $model->obtenerCompras();
     } catch (Exception $e) {
         echo "Error al obtener la lista de compras: " . $e->getMessage();
+        exit;
     }
 ?>
 
 <form action="../controller/ComprasController.php" method="post">
-    <label for="Numero_Orden_Compra	">Seleccione el Numero_Orden_Compra	</label>
-    <select name="ID_Compra " id="ID_Compra ">
+    <label for="Numero_Factura">Seleccione el Numero_Orden_Compra</label>
+    <select name="ID_Compra" id="ID_Compra">
         <?php
             $compra = $model->obtenerCompras();
 
