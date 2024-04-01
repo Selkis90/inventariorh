@@ -1,3 +1,4 @@
+<section>
 <?php
 // Incluye archivos necesarios (header y modelo de Proveedor)
 require_once '../header.php';
@@ -54,3 +55,4 @@ if (!empty($proveedor)) {
 // Incluye el archivo de pie de página
 require_once '../footer.php';
 ?>
+</section>

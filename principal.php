@@ -2,8 +2,10 @@
 // Se incluye el archivo 'header.php', que probablemente contenga la estructura HTML y elementos comunes del encabezado
 require_once 'header.php';
 ?>
-<p>Seleccione una opción:</p>
+<nav>
+<img src="/img/logo inventariorh.jpg" alt="">
 <!-- Lista de opciones con enlaces -->
+
 <ul>
     <li><a href="view/proveedor.php">Proveedor</a></li> <!-- Enlace para ver la sección de proveedores -->
     <li><a href="view/producto.php">Producto</a></li> <!-- Enlace para ver la sección de productos -->
@@ -16,8 +18,8 @@ require_once 'header.php';
     <!-- Puedes agregar más enlaces según las secciones de tu aplicación -->
 </ul>
 
-<a href="/index.php">Cerrar seccion</a>
-
+<a href="/index.php">Cerrar sesion</a>
+</nav>
 <?php
 // Se incluye el archivo 'footer.php', que probablemente contenga la estructura HTML del pie de página
 require_once 'footer.php';

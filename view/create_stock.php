@@ -1,9 +1,10 @@
 <?php
 // Incluye el encabezado de la página y el modelo relacionado con el stock.
-require_once '../header.php';
+/* require_once '../header.php'; */
+require_once '../principal.php';
 require_once '../model/StockModel.php';
 ?>
-
+<section class="section">
 <!-- Título de la página -->
 <h2>Crear stock</h2>
 
@@ -27,7 +28,7 @@ require_once '../model/StockModel.php';
         </li>
     </ul>
 </form>
-
+</section>
 <?php
 // Incluye el pie de página, que puede contener información adicional o scripts necesarios para la página.
 require_once '../footer.php';

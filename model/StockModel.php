@@ -5,7 +5,7 @@ require_once '../conexion.php';
 // Definición de la clase StockModel
 class StockModel
 {
-    // ------------------------------------------Función para insertar datos en la base de datos (método CREATE)
+    // ----------------------Función para insertar datos en la base de datos (método CREATE)
     public function insertarStock($Nombre_Producto, $Cantidad)
     {
         // Acceder a la variable global de conexión a la base de datos
@@ -23,7 +23,7 @@ class StockModel
         if ($sql->execute()) {
             echo "Stock creado exitosamente";
             // Redirigir a principal.php después de 3 segundos
-            /* header("refresh:3; url=../principal.php"); */
+            header("refresh:3; url=../principal.php");
             exit;
         } else {
             echo "Error al crear el stock: " . $sql->error;

@@ -1,0 +1,330 @@
+body {
+  margin: 0;
+}
+nav {
+  background-color: #1c2d44;
+  width: 200px; /* ajusta el ancho según lo necesites */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 0px 0; /* ajusta el relleno según lo necesites */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin-bottom: 10px; /* ajusta el espaciado entre elementos según lo necesites */
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px; /* ajusta el relleno según lo necesites */
+}
+
+a.active {
+  background-color: #429f7f;
+}
+
+img {
+  width: 200px;
+  margin-top: -30px;
+}
+
+#header {
+  background-color: #0f6387;
+  padding: 31px;
+  color: white; /* Cambia el color del texto si es necesario para que sea legible sobre el fondo */
+  margin-top: 0px;
+  border-left-width: 192px;
+  border-left-style: solid;
+  padding-bottom: 39px;
+  position: relative; /* Asegura que los elementos absolutamente posicionados sean relativos a este contenedor */
+}
+
+
+.lider {
+  position: absolute; /* Posiciona de forma absoluta */
+  bottom: 0; /* Lo coloca en la parte inferior */
+  left:70%; /* Lo coloca en la parte izquierda */
+}
+
+#titulo {
+  position: relative; /* o absolute, según tu diseño */
+  top: -38px; /* ajusta esta posición según tu necesidad */
+  left: 0px; /* ajusta esta posición según tu necesidad */
+}
+/* Establece los estilos de la sección */
+.section {
+  /* Establece el color de fondo */
+  background-color: #f4f4f4;
+  /* Agrega relleno */
+  padding: 20px;
+  /* Agrega bordes redondeados */
+  border-radius: 8px;
+  /* Agrega sombra */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Posiciona de forma absoluta */
+  position: absolute;
+  /* Define la posición desde la parte superior */
+  top: 200px;
+  /* Define la posición desde la izquierda */
+  left: 300px;
+}
+
+/* Aplica estilos específicos para .section */
+.section {
+  /* Posiciona de forma absoluta */
+  position: absolute;
+  /* Define la posición desde la parte superior */
+  top: 200px;
+  /* Define la posición desde la izquierda */
+  left: 300px;
+  /* Establece el color de fondo */
+  background-color: #f4f4f4;
+  /* Agrega relleno */
+  padding: 20px;
+  /* Agrega bordes redondeados */
+  border-radius: 8px;
+  /* Agrega sombra */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Establece la altura al 50% del contenedor */
+  height: 50%;
+  /* Agrega relleno a la derecha */
+  padding-right: 31px;
+  /* Establece el ancho al 50% del contenedor */
+  width: 50%;
+  /* Agrega un borde de 1px sólido */
+  border: 1px solid cornflowerblue;
+}
+
+/* Establece los estilos para los párrafos dentro de .section */
+.section p {
+  /* Establece el tamaño y el peso de la fuente */
+  font-size: 18px;
+  font-weight: bold;
+  /* Agrega margen en la parte inferior */
+  margin-bottom: 15px;
+  /* Establece el color del texto */
+  color: #333;
+}
+
+/* Establece los estilos para las listas no ordenadas dentro de .section */
+.section ul {
+  /* Elimina los estilos de viñetas */
+  list-style-type: none;
+  /* Elimina el relleno */
+  padding: 0;
+}
+
+/* Establece los estilos para los elementos de lista dentro de .section */
+.section li {
+  /* Agrega margen en la parte inferior */
+  margin-bottom: 5px;
+}
+
+/* Establece los estilos para los enlaces dentro de .section */
+.section a {
+  /* Elimina el subrayado del texto */
+  text-decoration: none;
+  /* Establece el color del texto */
+  color: #000000;
+  /* Establece el tamaño de la fuente */
+  font-size: 18px;
+  /* Agrega una transición suave al color del texto */
+  transition: color 0.3s ease;
+}
+
+/* Establece los estilos para los enlaces cuando se pasa el mouse sobre ellos dentro de .section */
+.section a:hover {
+  /* Subraya el texto al pasar el mouse */
+  text-decoration: underline;
+}
+
+/* Establece los estilos para los enlaces con la clase .section__link */
+.section__link {
+  /* Elimina el subrayado del texto */
+  text-decoration: none;
+  /* Establece el color del texto */
+  color: #d9ff00;
+  /* Establece el tamaño de la fuente */
+  font-size: 20px;
+  /* Agrega una transición suave al color del texto */
+  transition: color 0.3s ease;
+}
+
+/* Establece los estilos para los enlaces con la clase .section__link cuando se pasa el mouse sobre ellos */
+.section__link:hover {
+  /* Subraya el texto al pasar el mouse */
+  text-decoration: underline;
+}
+
+/* Establece los estilos comunes para .section1, .section2, .section3, .section4 */
+.section1,
+.section2,
+.section3,
+.section4 {
+  /* Establece el ancho */
+  width: 130px;
+  /* Establece la altura */
+  height: 50px;
+  /* Posiciona de forma absoluta */
+  position: absolute;
+  /* Agrega un borde en relieve */
+  border: outset cornflowerblue;
+  /* Agrega relleno */
+  padding: 40px;
+  /* Alinea el texto al centro */
+  text-align: center;
+}
+
+/* Establece los estilos específicos para .section1 */
+.section1 {
+  /* Define la posición desde la parte superior */
+  top: 90px;
+  /* Define la posición desde la izquierda */
+  left: 80px;
+}
+
+/* Establece los estilos específicos para .section2 */
+.section2 {
+  /* Define la posición desde la parte superior */
+  top: 90px;
+  /* Define la posición desde la derecha */
+  right: 80px;
+}
+
+/* Establece los estilos específicos para .section3 */
+.section3 {
+  /* Define la posición desde la parte inferior */
+  bottom: 90px;
+  /* Define la posición desde la izquierda */
+  left: 80px;
+}
+
+/* Establece los estilos específicos para .section4 */
+.section4 {
+  /* Define la posición desde la parte inferior */
+  bottom: 90px;
+  /* Define la posición desde la derecha */
+  right: 80px;
+}
+
+/* Establece los estilos para el pie de página */
+.footer {
+  /* Fija el pie de página en la parte inferior de la ventana */
+  position: fixed;
+  /* Define la posición desde la parte inferior */
+  bottom: 0;
+  /* Define la posición desde la izquierda */
+  left: 0;
+  /* Establece el ancho al 100% */
+  width: 100%;
+  /* Establece el color de fondo */
+  background-color: #333;
+  /* Establece el color del texto */
+  color: #fff;
+  /* Alinea el texto al centro */
+  text-align: center;
+  /* Elimina el relleno */
+  padding: 0px;
+}
+
+/* Establece los estilos para el contenido dentro del pie de página */
+.footer-content {
+  /* Centra el contenido horizontalmente */
+  display: flex;
+  justify-content: center;
+  /* Centra el contenido verticalmente */
+  align-items: center;
+}
+
+.footer-content > * {
+  margin: 0 10px; /* Espacio entre los elementos */
+}
+.quick-links ul li a {
+  color: antiquewhite;
+}
+.quick-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.quick-links h3 {
+  margin-right: 10px; /* Espacio entre el título y la lista */
+}
+
+/* Selecciona la lista no ordenada dentro de elementos con la clase "quick-links" */
+.quick-links ul {
+  /* Elimina los estilos predeterminados de la lista, como viñetas */
+  list-style: none;
+  /* Elimina el relleno predeterminado y los márgenes de la lista */
+  padding: 0;
+  margin: 0;
+  /* Establece la visualización de los elementos de la lista como una fila flexible */
+  display: flex;
+}
+
+.quick-links ul li {
+  margin-right: 10px; /* Espacio entre elementos de la lista */
+}
+
+.quick-links ul li:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row; /* Organiza los elementos en fila */
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.contact-info h3 {
+  margin-right: 10px; /* Espacio entre el título y los párrafos */
+}
+
+/* Establece el ancho de la tabla al 100% del contenedor */
+table {
+  width: 100%;
+  /* Colapsa los bordes de las celdas para un estilo más limpio */
+  border-collapse: collapse;
+  /* Agrega un margen superior de 20px */
+  margin-top: 20px;
+}
+/* Establece el ancho de la tabla al 100% y colapsa los bordes de las celdas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Agrega un margen superior de 20px */
+}
+
+/* Establece el estilo de las celdas */
+th,
+td {
+  border: 1px solid #ddd; /* Agrega un borde de 1px sólido con color #ddd */
+  padding: 8px; /* Añade un relleno de 8px */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Establece el estilo para las celdas de encabezado */
+th {
+  background-color: #f2f2f2; /* Agrega un color de fondo de #f2f2f2 */
+}
+
+/* Establece el estilo para filas pares de datos */
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* Alterna el color de fondo para las filas pares */
+}
+
+/* Establece el estilo de fondo al pasar el mouse sobre una fila */
+tr:hover {
+  background-color: #ddd; /* Cambia el color de fondo a #ddd */
+}

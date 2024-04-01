@@ -1,21 +1,26 @@
 <?php
 require_once '../conexion.php';
 require_once '../controller/inicioController.php';
+require_once "../header_login.php";
 ?>
 
 <!------------------ Formulario para iniciar sesión -------------------------------->
-<h2>Iniciar Sesión</h2>
+
 
 <form action="../controller/inicioController.php" method="post">
-    <label for="correo_login">Correo</label>
-    <input type="text" name="correo" required>
+    <h2>Iniciar Sesión</h2>
+    <label for="correo_login"></label>
+    <input type="text" name="correo" placeholder="&#128273; Correo">
     <br>
-    <label for="contraseña">Contraseña</label>
-    <input type="password" name="contraseña" required>
+    <label for="contraseña"></label>
+    <input type="password" name="contraseña" placeholder="&#128274; Contraseña" required>
     <br>
     <input type="submit" name="iniciar_sesion" value="Iniciar Sesión">
+
+    <br>
+    <a href="../view/view_registrarse.php" style="float: right;">Registrarse</a>
 </form>
 
 <?php
-require_once '../footer.php';
+/* require_once '../footer.php'; */
 ?>

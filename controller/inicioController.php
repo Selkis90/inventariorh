@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["registrarse"])) {
         echo "Registro con éxito.";
 
         // Redirige a la página principal
-        header("refresh:3; url=../index.php");
+        header("refresh:3; url=../view/view_inicio.php");
     } else {
         // Imprimir un mensaje de error
         echo "Error al crear el registro: " . $stmt->error;

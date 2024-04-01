@@ -5,7 +5,7 @@ require_once '../model/StockModel.php';
 // Definición de la clase StockController
 class StockController
 {
-    // -----------------------------------------Función para agregar datos a la base de datos (método CREATE)
+    // -------------Función para agregar datos a la base de datos (método CREATE)
 
     public function crearStock($Nombre_Producto, $Cantidad)
     {
@@ -16,7 +16,7 @@ class StockController
         $model->insertarStock($Nombre_Producto, $Cantidad);
     }
 
-    // -----------------------------------------Función para ver los datos agregados en la base de datos (método READ)
+    // --------------Función para ver los datos agregados en la base de datos (método READ)
 
     public function VerStock()
     {
@@ -30,7 +30,7 @@ class StockController
         require_once '../view/view_stock.php';
     }
 
-    // ------------------------------------------Función para actualizar datos en la base de datos (método UPDATE)
+    // -------------------Función para actualizar datos en la base de datos (método UPDATE)
 
     public function actualizarStockController($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad)
     {
@@ -41,7 +41,7 @@ class StockController
         $model->actualizarStockModel($ID_Stock, $Nuevo_Nombre_Producto, $Nueva_Cantidad);
     }
 
-    // --------------------------------------------Funcion para eliminar con el metodo (DELETE)
+    // ----------------------------Funcion para eliminar con el metodo (DELETE)
     public function eliminarStock($ID_Stock)
     {
         // Crea una instancia de la clase StockModel
