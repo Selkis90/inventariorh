@@ -1,7 +1,13 @@
 <?php
+
 /* require_once '../header.php'; */
-require_once '../principal.php';
-require_once '../model/StockModel.php';
+
+// Rutas dinámicas para importar archivos
+$file_principal = dirname(dirname(__FILE__)) . '/principal.php';
+$file_model_stock = dirname(dirname(__FILE__)) . '/model/StockModel.php';
+
+require_once $file_principal;
+require_once $file_model_stock;
 
 $model = new StockModel();
 
