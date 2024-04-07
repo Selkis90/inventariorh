@@ -1,3 +1,10 @@
+<?php
+
+// Incluir parámetros de la aplicación
+require_once 'parametros.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +14,7 @@
     <!-- Configuración de la vista para dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- Título de la página que aparecerá en la pestaña del navegador -->
-    <title>INVENTARIORH</title>
+    <title><?= _APPLICATION_NAME ?></title>
     <!-- Enlace al ícono de la página -->
     <link rel="icon" href="/img/logo inventariorh.jpg" type="image/x-icon">
     <!-- Enlace al archivo de estilos externo ubicado en la carpeta 'css' -->
