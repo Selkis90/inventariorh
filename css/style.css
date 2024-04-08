@@ -8,7 +8,7 @@ nav {
   top: 0;
   left: 0;
   bottom: 0;
-  padding: 0px 0; /* ajusta el relleno según lo necesites */
+  padding: 10px 0; /* ajusta el relleno según lo necesites */
 }
 
 nav ul {
@@ -28,6 +28,23 @@ nav a {
   padding: 10px 20px; /* ajusta el relleno según lo necesites */
 }
 
+/* pantallas de medida 414px y 480px: */
+@media only screen and (min-width: 414px) and (max-width: 480px) {
+  nav {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  nav li {
+    margin-bottom: 8px;
+  }
+
+  nav a {
+    padding: 8px 16px;
+  }
+}
+
+
 a.active {
   background-color: #429f7f;
 }
@@ -37,13 +54,11 @@ img {
   margin-top: -30px;
 }
 
-#header {
+header {
   background-color: #0f6387;
-  padding: 31px;
+  padding: 33px;
   color: white; /* Cambia el color del texto si es necesario para que sea legible sobre el fondo */
-  margin-top: 0px;
-  border-left-width: 192px;
-  border-left-style: solid;
+  border-left: 192px solid transparent; /* Se puede combinar la definición de bordes en una sola línea */
   padding-bottom: 39px;
   position: relative; /* Asegura que los elementos absolutamente posicionados sean relativos a este contenedor */
 }
@@ -52,7 +67,7 @@ img {
 .lider {
   position: absolute; /* Posiciona de forma absoluta */
   bottom: 0; /* Lo coloca en la parte inferior */
-  left:70%; /* Lo coloca en la parte izquierda */
+  left: 70%; /* Lo coloca en la parte izquierda */
 }
 
 #titulo {
@@ -166,10 +181,10 @@ img {
 }
 
 /* Establece los estilos comunes para .section1, .section2, .section3, .section4 */
-.section1,
-.section2,
-.section3,
-.section4 {
+.article1,
+.article2,
+.article3,
+.article4 {
   /* Establece el ancho */
   width: 130px;
   /* Establece la altura */
@@ -185,7 +200,7 @@ img {
 }
 
 /* Establece los estilos específicos para .section1 */
-.section1 {
+.article1 {
   /* Define la posición desde la parte superior */
   top: 90px;
   /* Define la posición desde la izquierda */
@@ -193,7 +208,7 @@ img {
 }
 
 /* Establece los estilos específicos para .section2 */
-.section2 {
+.article2 {
   /* Define la posición desde la parte superior */
   top: 90px;
   /* Define la posición desde la derecha */
@@ -201,7 +216,7 @@ img {
 }
 
 /* Establece los estilos específicos para .section3 */
-.section3 {
+.article3 {
   /* Define la posición desde la parte inferior */
   bottom: 90px;
   /* Define la posición desde la izquierda */
@@ -209,7 +224,7 @@ img {
 }
 
 /* Establece los estilos específicos para .section4 */
-.section4 {
+.article4 {
   /* Define la posición desde la parte inferior */
   bottom: 90px;
   /* Define la posición desde la derecha */
@@ -327,4 +342,15 @@ tr:nth-child(even) {
 /* Establece el estilo de fondo al pasar el mouse sobre una fila */
 tr:hover {
   background-color: #ddd; /* Cambia el color de fondo a #ddd */
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 768px) {
+  /* Ajustes específicos para dispositivos móviles */
+  nav {
+    position: static;
+    padding: 10px 0;
+  }
+
+
 }

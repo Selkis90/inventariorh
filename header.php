@@ -12,7 +12,7 @@ require_once 'parametros.php';
     <!-- Configuración del juego de caracteres -->
     <meta charset="UTF-8">
     <!-- Configuración de la vista para dispositivos móviles -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Título de la página que aparecerá en la pestaña del navegador -->
     <title><?= _APPLICATION_NAME ?></title>
     <!-- Enlace al ícono de la página -->
@@ -26,20 +26,22 @@ require_once 'parametros.php';
 </head>
 
 <body>
-    <div id="header">
-        <!-- Encabezado principal de la página -->
-        <div id="titulo">
-            <h1>SACS GROUP</h1>
-        </div>
-        <div class="lider">
-            <h1>Andres ramirez lider del proyecto</h1>
-        </div>
+    <header>
+        <div>
+            <!-- Encabezado principal de la página -->
+            <div id="titulo">
+                <h1>SACS GROUP</h1>
+            </div>
+            <div class="lider">
+                <h1>Andres ramirez lider del proyecto</h1>
+            </div>
 
 
-        <!--<label for="menu1">Regresar al menu principal</label> 
+            <!--<label for="menu1">Regresar al menu principal</label> 
         Aquí irían más elementos HTML que forman el contenido de la página -->
-        <form action="/principal.php" method="post">
+            <form action="/principal.php" method="post">
 
-            <button type="submit" name="Regresar">Regresar al menu principal</button>
-        </form>
-    </div>
+                <button type="submit" name="Regresar">Regresar al menu principal</button>
+            </form>
+        </div>
+    </header>

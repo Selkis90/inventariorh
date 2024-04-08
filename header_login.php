@@ -5,7 +5,9 @@
     <!-- Configuración del juego de caracteres -->
     <meta charset="UTF-8">
     <!-- Configuración de la vista para dispositivos móviles -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Título de la página que aparecerá en la pestaña del navegador -->
     <title>INVENTARIORH</title>
     <!-- Enlace al ícono de la página -->
