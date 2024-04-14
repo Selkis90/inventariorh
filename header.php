@@ -21,7 +21,7 @@ require_once 'parametros.php';
     <link rel="stylesheet" href="/css/style.css">
     <!-- Incluir Bootstrap (agrega esto en tu encabezado) -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-
+    
 
 </head>
 
@@ -34,14 +34,5 @@ require_once 'parametros.php';
             </div>
             <div class="lider">
                 <h1>Andres ramirez lider del proyecto</h1>
-            </div>
 
-
-            <!--<label for="menu1">Regresar al menu principal</label> 
-        Aquí irían más elementos HTML que forman el contenido de la página -->
-            <form action="/principal.php" method="post">
-
-                <button type="submit" name="Regresar">Regresar al menu principal</button>
-            </form>
-        </div>
     </header>

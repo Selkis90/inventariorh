@@ -3,7 +3,7 @@ body {
 }
 nav {
   background-color: #1c2d44;
-  width: 200px; /* ajusta el ancho según lo necesites */
+  width: 170px; /* ajusta el ancho según lo necesites */
   position: fixed;
   top: 0;
   left: 0;
@@ -28,29 +28,12 @@ nav a {
   padding: 10px 20px; /* ajusta el relleno según lo necesites */
 }
 
-/* pantallas de medida 414px y 480px: */
-@media only screen and (min-width: 414px) and (max-width: 480px) {
-  nav {
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  nav li {
-    margin-bottom: 8px;
-  }
-
-  nav a {
-    padding: 8px 16px;
-  }
-}
-
-
 a.active {
   background-color: #429f7f;
 }
 
 img {
-  width: 200px;
+  width: 170px;
   margin-top: -30px;
 }
 
@@ -58,16 +41,16 @@ header {
   background-color: #0f6387;
   padding: 33px;
   color: white; /* Cambia el color del texto si es necesario para que sea legible sobre el fondo */
-  border-left: 192px solid transparent; /* Se puede combinar la definición de bordes en una sola línea */
-  padding-bottom: 39px;
+  border-left: 230px solid transparent; /* Se puede combinar la definición de bordes en una sola línea */
+  padding-bottom: 40px;
   position: relative; /* Asegura que los elementos absolutamente posicionados sean relativos a este contenedor */
 }
-
 
 .lider {
   position: absolute; /* Posiciona de forma absoluta */
   bottom: 0; /* Lo coloca en la parte inferior */
   left: 70%; /* Lo coloca en la parte izquierda */
+  font-size: 10px;
 }
 
 #titulo {
@@ -88,27 +71,9 @@ header {
   /* Posiciona de forma absoluta */
   position: absolute;
   /* Define la posición desde la parte superior */
-  top: 200px;
+  top: 270px;
   /* Define la posición desde la izquierda */
   left: 300px;
-}
-
-/* Aplica estilos específicos para .section */
-.section {
-  /* Posiciona de forma absoluta */
-  position: absolute;
-  /* Define la posición desde la parte superior */
-  top: 200px;
-  /* Define la posición desde la izquierda */
-  left: 300px;
-  /* Establece el color de fondo */
-  background-color: #f4f4f4;
-  /* Agrega relleno */
-  padding: 20px;
-  /* Agrega bordes redondeados */
-  border-radius: 8px;
-  /* Agrega sombra */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   /* Establece la altura al 50% del contenedor */
   height: 50%;
   /* Agrega relleno a la derecha */
@@ -344,13 +309,239 @@ tr:hover {
   background-color: #ddd; /* Cambia el color de fondo a #ddd */
 }
 
-/* RESPONSIVE */
-@media only screen and (max-width: 768px) {
-  /* Ajustes específicos para dispositivos móviles */
-  nav {
-    position: static;
-    padding: 10px 0;
+nav li {
+  margin-bottom: 8px;
+}
+
+nav a {
+  padding: 8px 16px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -8px;
+}
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+.quick-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;
+}
+/* -----------------RESPONSIVE--------------------- */
+
+.menu-toggle {
+  display: none; /* Ocultar el botón en pantallas grandes */
+}
+
+.menu-list {
+  display: block;
+}
+nav {
+  background-color: #1c2d44;
+  width: 170px;
+  position: fixed;
+  top: 0;
+  /*left: -230px; Ocultar el nav fuera de la pantalla */
+  bottom: 0;
+  padding: 10px 0;
+  transition: left 0.3s; /* Añadir transición para suavizar el desplazamiento */
+}
+
+/* ------resposive (max-width: 1440px) and (min-width: 1025px)----------------------------- */
+
+@media screen and (max-width: 1440px) and (min-width: 1025px) {
+  /* Agrega aquí los estilos que deseas aplicar específicamente para estas dimensiones */
+
+  .article1,
+  .article2,
+  .article3,
+  .article4 {
+    width: 90px;
+    height: 20px;
   }
 
+  .section a {
+    position: absolute;
+    top: 38%;
+    right: 24%;
+    left: 24px;
+  }
+  #titulo {
+    position: relative;
+    top: -38px;
+    left: -80px;
+  }
+  .lider {
+    position: absolute;
+    bottom: 0;
+    left: 44%;
+    font-size: 10px;
+  }
+}
 
+/* ------resposive (max-width: 1024px) and (min-width: 870px)----------------------------- */
+
+@media screen and (max-width: 1024px) and (min-width: 870px) {
+  /* Agrega aquí los estilos que deseas aplicar específicamente para estas dimensiones */
+
+  .article1,
+  .article2,
+  .article3,
+  .article4 {
+    width: 60px;
+    height: 0px;
+  }
+
+  .section a {
+    position: absolute;
+    top: 38%;
+    right: 24%;
+    left: 24px;
+  }
+  #titulo {
+    position: relative;
+    top: -38px;
+    left: -84px;
+  }
+  .lider {
+    position: absolute;
+    bottom: 0;
+    left: 38%;
+    font-size: 10px;
+  }
+}
+
+/* ------resposive (max-width: 869px) and (min-width: 425px)----------------------------- */
+
+@media screen and (max-width: 869px) and (min-width: 502px) {
+  /* Agrega aquí los estilos que deseas aplicar específicamente para estas dimensiones */
+
+  .article1,
+  .article2,
+  .article3,
+  .article4 {
+    width: 36px;
+    height: 10px;
+  }
+  .article1 {
+    top: 90px;
+    left: 20px;
+  }
+  .article2 {
+    top: 90px;
+    right: 20px;
+  }
+
+  .article3 {
+    bottom: 90px;
+    left: 20px;
+  }
+  .article4 {
+    bottom: 90px;
+    right: 20px;
+  }
+
+  .section {
+    top: 160px;
+    left: 110px;
+  }
+  .section a {
+    position: absolute;
+    top: 38%;
+    right: 24%;
+    left: 24px;
+  }
+
+  #titulo {
+    font-size: 7px;
+    position: absolute;
+    left: -120px;
+    top: 0px;
+  }
+
+  .lider {
+    position: absolute;
+    bottom: 0;
+    left: 17%;
+    font-size: 7px;
+  }
+  header {
+    padding-bottom: 48px;
+  }
+  nav {
+    width: 100px;
+  }
+  img {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 501px) and (min-width: 300px) {
+  img {
+    width: 100px;
+  }
+  nav {
+    width: 100px;
+  }
+  nav a {
+    font-size: 12px;
+  }
+  #titulo {
+    position: relative;
+    top: -38px;
+    left: -150px;
+    font-size: 6px;
+  }
+  .lider {
+    position: absolute;
+    bottom: 0;
+    left: -3%;
+    font-size: 7px;
+  }
+  header {
+    width: 100%;
+    padding-bottom: 18px;
+  }
+  .section {
+    left: 120px;
+    top: 90px;
+  }
+  .section a {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    left: 15px;
+  }
+  .article1,
+  .article2,
+  .article3,
+  .article4 {
+    width: 80px;
+    height: 0px;
+  }
+  .article1 {
+    top: 14px;
+    left: 10px;
+  }
+  .article2 {
+    top: 120px;
+    left: 10px;
+  }
+  .article3 {
+    top: 220px;
+    left: 10px;
+  }
+  .article4 {
+    top: 320px;
+    left: 10px;
+  }
 }

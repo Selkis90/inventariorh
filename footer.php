@@ -19,7 +19,7 @@
         <!-- Aquí se movió la sección bottom-info -->
     </div>
 </footer>
-
+<script src="/javascript.js/javascript.js"></script>
 </body>
 
 </html>
