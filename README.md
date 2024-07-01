@@ -1,8 +1,9 @@
 # inventariorh
-control de inventarios 
 
+control de inventarios
 
 # Instalación
+
 1. Clonar
 2. Crear DB
 3. Copiar el archivo parametros.example.php y dejarlo como: parametros.php

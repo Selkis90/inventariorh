@@ -24,7 +24,7 @@ require_once '../model/StockModel.php';
         </li>
         <!-- Botón de envío del formulario con la etiqueta 'crear'. -->
         <li>
-            <button type="submit" name="crear">Crear Stock</button>
+            <button type="submit" name="crear"></button>
         </li>
     </ul>
 </form>

@@ -1,6 +1,7 @@
 <?php
 require_once '../conexion.php';
 
+
 // --------- Programación para ingresar los datos a la base de datos ------------------------------------
 
 // Validar si los datos se envían por método POST y si se envían desde input registrarse
@@ -62,15 +63,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["iniciar_sesion"])) {
 
         // Verificar contraseña
         if (password_verify($contraseña, $fila['contraseña'])) {
-            echo "Inicio de sesión exitoso";
-            // volver a la pagina inicial 
-            header("refresh:3; url=../principal.php");
+            echo "<script src='../javascript/funciones.js'></script>";
+            echo "<script>
+                    saludar();
+                    window.location.href = '../principal.php';
+                  </script>";
         } else {
-            echo "Contraseña incorrecta.";
-            header("refresh:3; url=../index.php");
+            echo "<script>
+                    alert('Contraseña incorrecta.');
+                    window.location.href = '../index.php';
+                  </script>";
         }
     } else {
-        echo "Usuario no encontrado";
-        header("refresh:3; url=../index.php");
+        echo "<script>
+                alert('Usuario no encontrado');
+                window.location.href = '../index.php';
+              </script>";
     }
 }

@@ -17,7 +17,7 @@ require_once "../header_login.php";
     <input type="email" name="correo" placeholder="&#128273; Correo" required>
     <br>
     <label for="contraseña"></label>
-    <input type="password" name="contraseña" placeholder="&#128274; Contraseña" required>
+    <input type="password" name="contraseña" placeholder="&#128274; contraseña" required>
     <br>
     <input type="submit" name="registrarse" value="Registrar">
 

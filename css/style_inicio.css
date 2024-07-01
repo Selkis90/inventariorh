@@ -94,3 +94,30 @@ input[type="submit"]:active {
     font-size: 19px;
   }
 }
+
+.BTN_INICIO {
+  display: inline-block; /* Hace que el div se comporte como un elemento en línea con bloque */
+  padding: 1px 1px; /* Añade espaciado interno al botón */
+  background-color: #9F624D; /* Color de fondo del botón */
+  color: #fff; /* Color del texto */
+  text-align: center; /* Centra el texto horizontalmente */
+  text-decoration: none; /* Quita el subrayado del texto */
+  border: none; /* Quita el borde */
+  border-radius: 30px; /* Borde redondeado */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.BTN_INICIO:hover {
+  background-color: #0F6387; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.BTN_INICIO a {
+  text-decoration: none; /* Quita el subrayado del enlace */
+  color: inherit; /* Hereda el color de texto del contenedor */
+}
+
+.BTN_INICIO img {
+  vertical-align: middle; /* Alinea verticalmente la imagen con el texto */
+  border-radius: 30px;  /* le da borde a la imagen */
+}
