@@ -8,7 +8,7 @@ require_once 'header.php';
 
     <div class="items">
         <ul class="menu-list">
-            <li><a href="<?= _URL ?>principal.php">Inicio</a></li>
+            <li><a href="<?= _URL ?>principal.php">prueba inicio</a></li>
             
             <li><a href="#" id="Proveedor">Proveedor</a></li><!-- ok -->
             <!-- <li><a href="<?= _URL ?>view/proveedor.php">Proveedor</a></li> --> <!-- Enlace para ver la sección de proveedores -->
