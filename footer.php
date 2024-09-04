@@ -14,6 +14,7 @@
                     <li><a href="#">Política de privacidad</a></li>
                     <li><a href="#">Preguntas frecuentes</a></li>
                 </ul>
+                
             </div>
         </div>
         <!-- Aquí se movió la sección bottom-info -->
