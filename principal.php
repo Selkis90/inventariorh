@@ -4,7 +4,7 @@ require_once 'header.php';
 
 ?>
 <nav class="sidenav">
-    <img src="<?= _URL ?>img/logo inventariorh.jpg" alt="logo inventariorh">
+    <img src="<?= _URL ?>img/nuevo_logo.jpeg" alt="logo inventariorh">
 
     <div class="items">
         <ul class="menu-list">
@@ -28,10 +28,10 @@ require_once 'header.php';
             <li><a href="#" id="ajustes_inventario">Ajustes Inventario</a></li>
             <!-- <li><a href="<?= _URL ?>view/ajustes_inventario.php">Ajustes Inventario</a></li> --><!-- Enlace para la sección de ajustes de inventario -->
             
-            <li><a href="#" id="Compras">Compras</a></li>
+            <!-- <li><a href="#" id="Compras">Compras</a></li> -->
             <!-- <li><a href="<?= _URL ?>view/compras.php">Compras</a></li> --> <!-- Enlace para la sección de compras --><!-- Puedes agregar más enlaces según las secciones de tu aplicación -->
             
-            <li><a href="#" id="prueba">prueba</a></li><!-- ok -->
+            <!-- <li><a href="#" id="prueba">prueba</a></li> -->
         </ul>
 
         <a href="<?= _URL ?>index.php">Cerrar sesion</a>

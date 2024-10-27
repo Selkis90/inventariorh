@@ -30,9 +30,8 @@ require_once 'parametros.php';
         <div>
             <!-- Encabezado principal de la página -->
             <div id="titulo">
-                <h1>SACS GROUP</h1>
+                <h1>Andres ramirez lider del proyecto</h1>
             </div>
             <div class="lider">
-                <h1>Andres ramirez lider del proyecto</h1>
 
     </header>

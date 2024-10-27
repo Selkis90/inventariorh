@@ -20,12 +20,19 @@ nav ul {
 nav li {
   margin-bottom: 10px; /* ajusta el espaciado entre elementos según lo necesites */
 }
-
 nav a {
   display: block;
   text-decoration: none;
   color: white;
-  padding: 10px 20px; /* ajusta el relleno según lo necesites */
+  padding: 10px 20px;
+  font-size: 16px; /* Tamaño de letra inicial */
+  transition: color 0.3s ease, font-size 0.3s ease; /* Transición suave */
+}
+
+/* Cambia el color y aumenta el tamaño al pasar el mouse */
+nav a:hover {
+  color: rgb(21, 255, 0);
+  font-size: 18px; /* Tamaño de letra al pasar el mouse */
 }
 
 a.active {
@@ -34,7 +41,7 @@ a.active {
 
 img {
   width: 170px;
-  margin-top: -30px;
+  margin-top: -10px;
 }
 
 header {
@@ -42,7 +49,7 @@ header {
   padding: 33px;
   color: white; /* Cambia el color del texto si es necesario para que sea legible sobre el fondo */
   border-left: 230px solid transparent; /* Se puede combinar la definición de bordes en una sola línea */
-  padding-bottom: 40px;
+  padding-bottom: 10px;
   position: relative; /* Asegura que los elementos absolutamente posicionados sean relativos a este contenedor */
 }
 
@@ -314,7 +321,7 @@ nav li {
 }
 
 nav a {
-  padding: 8px 16px;
+  padding: 34px 16px;
 }
 
 .footer-content {

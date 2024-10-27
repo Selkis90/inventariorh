@@ -18,7 +18,7 @@ body {
   align-items: center; /* Centra verticalmente los elementos dentro del cuerpo */
   height: 100vh; /* Establece la altura del cuerpo al 100% de la altura de la ventana */
   margin: 0; /* Elimina el margen por defecto */
-  background-image: url("../img/logo\ inventariorh.jpg");
+  /* background-image: url("../img/logo\ inventariorh.jpg"); */
   background-size: 60%; /* Ajusta la imagen de fondo para que cubra todo el contenedor */
   background-position: center; /* Centra la imagen de fondo */
   background-repeat: no-repeat; /* Evita la repetición de la imagen de fondo */
