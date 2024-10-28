@@ -82,7 +82,7 @@ header {
   /* Define la posición desde la izquierda */
   left: 300px;
   /* Establece la altura al 50% del contenedor */
-  height: 50%;
+  height: 60%;
   /* Agrega relleno a la derecha */
   padding-right: 31px;
   /* Establece el ancho al 50% del contenedor */
@@ -381,7 +381,15 @@ nav {
     top: 38%;
     right: 24%;
     left: 24px;
+    font-size: 16px;
+    transition: color 0.3s ease, font-size 0.3s ease;
   }
+
+  .section a:hover{
+    color: rgb(4, 0, 80);
+  font-size: 20px;
+  }
+
   #titulo {
     position: relative;
     top: -38px;

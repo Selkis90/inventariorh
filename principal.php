@@ -1,42 +1,10 @@
 <?php
 // Se incluye el archivo 'header.php', que probablemente contenga la estructura HTML y elementos comunes del encabezado
 require_once 'header.php';
-
+require_once 'menu.php';
 ?>
-<nav class="sidenav">
-    <img src="<?= _URL ?>img/nuevo_logo.jpeg" alt="logo inventariorh">
 
-    <div class="items">
-        <ul class="menu-list">
-            <li><a href="<?= _URL ?>principal.php">Inicio</a></li>
-            
-            <li><a href="#" id="Proveedor">Proveedor</a></li><!-- ok -->
-            <!-- <li><a href="<?= _URL ?>view/proveedor.php">Proveedor</a></li> --> <!-- Enlace para ver la sección de proveedores -->
-            
-            <li><a href="#" id="Producto">Producto</a></li><!-- ok -->
-            <!-- <li><a href="<?= _URL ?>view/producto.php">Producto</a></li> --> <!-- Enlace para ver la sección de productos -->
-            
-            <li><a href="#" id="stock">Stock</a></li><!-- ok -->
-            <!-- <li><a href="<?= _URL ?>view/stock.php">Stock</a></li> --> <!-- Enlace para ver la sección de stock -->
-            
-            <li><a href="#" id="Activos">Activos</a></li>
-            <!-- <li><a href="<?= _URL ?>view/activos.php">Activos</a></li> --><!-- Enlace para la sección de ingreso de activos -->
-            
-            <li><a href="#" id="Translados">Translados</a></li>
-            <!-- <li><a href="<?= _URL ?>view/translados.php">Translados</a></li> --> <!-- Enlace para la sección de translados -->
-            
-            <li><a href="#" id="ajustes_inventario">Ajustes Inventario</a></li>
-            <!-- <li><a href="<?= _URL ?>view/ajustes_inventario.php">Ajustes Inventario</a></li> --><!-- Enlace para la sección de ajustes de inventario -->
-            
-            <!-- <li><a href="#" id="Compras">Compras</a></li> -->
-            <!-- <li><a href="<?= _URL ?>view/compras.php">Compras</a></li> --> <!-- Enlace para la sección de compras --><!-- Puedes agregar más enlaces según las secciones de tu aplicación -->
-            
-            <!-- <li><a href="#" id="prueba">prueba</a></li> -->
-        </ul>
 
-        <a href="<?= _URL ?>index.php">Cerrar sesion</a>
-    </div>
-</nav>
 
 <!------------ Proveedor ------------>
 <section class="section" id="proveedor_oculto" style="display: none;">

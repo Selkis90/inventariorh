@@ -1,5 +1,5 @@
 <?php
-require_once '../header.php';
+require_once '../principal.php';
 require_once '../model/ProveedorModel.php';
 
 $model = new ProveedorModel();
@@ -11,21 +11,21 @@ try {
     exit;
 }
 ?>
+<section class="section">
+    <form action="../controller/ProveedorController.php" method="post">
+        <label for="Nombre">Seleccione el nombre del proveedor</label>
+        <select name="ID_Proveedor" id="ID_Proveedor">
+            <?php
+            $proveedor = $model->obtenerProveedor();
 
-<form action="../controller/ProveedorController.php" method="post">
-    <label for="Nombre">Seleccione el nombre del proveedor</label>
-    <select name="ID_Proveedor" id="ID_Proveedor">
-        <?php
-        $proveedor = $model->obtenerProveedor();
-
-        foreach ($proveedor as $row) {
-            echo "<option value='" . $row['ID_Proveedor'] . "'>" . $row['Nombre'] . "</option>";
-        }
-        ?>
-    </select>
-    <input type="submit" name="eliminar" value="Eliminar proveedor">
-</form>
-
-<?php
-require_once '../footer.php';
-?>
+            foreach ($proveedor as $row) {
+                echo "<option value='" . $row['ID_Proveedor'] . "'>" . $row['Nombre'] . "</option>";
+            }
+            ?>
+        </select>
+        <input type="submit" name="eliminar" value="Eliminar proveedor">
+    </form>
+</section>
+    <?php
+    require_once '../footer.php';
+    ?>

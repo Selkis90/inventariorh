@@ -1,6 +1,6 @@
 <?php
 // Incluye los archivos necesarios (header y modelo de Translado)
-require_once '../header.php';
+require_once '../principal.php';
 require_once '../model/TransladoModel.php';
 
 // Crea una instancia del modelo de Translado
@@ -16,6 +16,7 @@ try {
 
 // Verifica si hay datos de traslado para mostrar
 if (!empty($translado)) {
+    echo'<section class=section>';
     // Inicia la tabla HTML y define las columnas
     echo "<table border='1'>
             <tr>
@@ -65,6 +66,7 @@ if (!empty($translado)) {
 
     // Cierra la tabla HTML
     echo "</table>";
+    echo'<section>';
 } else {
     // Muestra un mensaje si no hay datos para mostrar
     echo "No hay datos para mostrar.";

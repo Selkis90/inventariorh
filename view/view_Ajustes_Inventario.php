@@ -1,6 +1,6 @@
 <?php
 // Incluye archivos necesarios (header y modelo de Ajustes de Inventarios)
-require_once '../header.php';
+require_once '../principal.php';
 require_once '../model/Ajustes_inventariosModel.php';
 
 // Crea una instancia del modelo de Ajustes de Inventarios
@@ -14,14 +14,14 @@ try {
     echo 'Error al obtener ajustes de inventarios: ' . $e->getMessage();
 }
 ?>
+<section class="section">;
+    <h2>Ver Ajustes de Inventarios</h2>
 
-<h2>Ver Ajustes de Inventarios</h2>
-
-<?php
-// Verifica si hay datos de Ajustes de Inventarios para mostrar
-if (!empty($Ajustes_Inventarios)) {
-    // Inicia la tabla HTML y define las columnas
-    echo "<table border='1'>
+    <?php
+    // Verifica si hay datos de Ajustes de Inventarios para mostrar
+    if (!empty($Ajustes_Inventarios)) {
+        // Inicia la tabla HTML y define las columnas
+        echo "<table border='1'>
             <tr>
                 <th>Cantidad_Ajustada</th>
                 <th>Motivo</th>
@@ -32,9 +32,9 @@ if (!empty($Ajustes_Inventarios)) {
                 <th>Documento_Relacionado</th>
             </tr>";
 
-    // Itera a través de los datos de Ajustes de Inventarios y muestra cada fila en la tabla
-    foreach ($Ajustes_Inventarios as $row) {
-        echo "<tr>
+        // Itera a través de los datos de Ajustes de Inventarios y muestra cada fila en la tabla
+        foreach ($Ajustes_Inventarios as $row) {
+            echo "<tr>
                         <td>" . htmlspecialchars($row['Cantidad_Ajustada']) . "</td>
                         <td>" . htmlspecialchars($row['Motivo']) . "</td>
                         <td>" . htmlspecialchars($row['Fecha_Ajuste']) . "</td>
@@ -43,15 +43,15 @@ if (!empty($Ajustes_Inventarios)) {
                         <td>" . htmlspecialchars($row['Tipo_Ajuste']) . "</td>
                         <td>" . htmlspecialchars($row['Documento_Relacionado']) . "</td>
                     </tr>";
+        }
+
+        // Cierra la tabla HTML
+        echo "</table>";
+        echo'</section>';
+    } else {
+        // Muestra un mensaje si no hay datos de Ajustes de Inventarios para mostrar
+        echo "No hay datos para mostrar.";
     }
-
-    // Cierra la tabla HTML
-    echo "</table>";
-} else {
-    // Muestra un mensaje si no hay datos de Ajustes de Inventarios para mostrar
-    echo "No hay datos para mostrar.";
-}
-
-// Incluye el archivo de pie de página
-require_once '../footer.php';
-?>
+    // Incluye el archivo de pie de página
+    require_once '../footer.php';
+    ?>

@@ -1,6 +1,6 @@
 <?php
 // Incluye archivos necesarios (header y modelo de Producto)
-require_once '../header.php';
+require_once '../principal.php';
 
 require_once '../model/ProductoModel.php';
 
@@ -13,6 +13,8 @@ try {
 
     // Verifica si hay datos de Producto para mostrar
     if (!empty($producto)) {
+
+        echo '<section class="section">';
         // Inicia la tabla HTML y define las columnas
         echo "<table border='1'>
                 <tr>
@@ -52,6 +54,7 @@ try {
 
         // Cierra la tabla HTML
         echo "</table>";
+        echo '</section>'; // Cierra la sección
     } else {
         // Muestra un mensaje si no hay datos de Producto para mostrar
         echo "No hay datos para mostrar.";

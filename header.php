@@ -20,7 +20,12 @@ require_once 'parametros.php';
     <!-- Enlace al archivo de estilos externo ubicado en la carpeta 'css' -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- Incluir Bootstrap (agrega esto en tu encabezado) -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+    <!-- Agrega esto en la sección <head> de tu HTML -->
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+
     <script src="./javascript/principal.js" defer></script>
 
 </head>
