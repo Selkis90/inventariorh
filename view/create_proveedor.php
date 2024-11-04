@@ -4,7 +4,9 @@ require_once '../model/ProveedorModel.php';
 require_once '../principal.php';
 
 ?>
+<a href="../principal.php" class="regresar">regresar</a>
 <section class="section">
+
     <!-- Encabezado secundario de la página -->
     <h2>Crear Proveedor</h2>
 

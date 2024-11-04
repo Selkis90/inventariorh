@@ -4,6 +4,7 @@ require_once '../principal.php';
 require_once '../model/Ajustes_inventariosModel.php';
 ?>
 <section class="section">
+    <h2>Crear ajustes de inventarios</h2>
     <!-- Formulario para crear ajustes de inventarios. Los datos se enviarán al controlador 'Ajustes_inventariosController.php' mediante el método POST -->
     <form action="../controller/Ajustes_inventariosController.php" method="post">
         <ul>

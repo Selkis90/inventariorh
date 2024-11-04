@@ -5,27 +5,24 @@ require_once '../model/Ajustes_inventariosModel.php';
 $model = new Ajustes_InventariosModel();
 
 try {
-    $ajustesInventariosModel = $model->obtenerAjustes_Inventarios();
+    $ajustesInventarios = $model->obtenerAjustes_Inventarios();
 } catch (Exception $e) {
-    echo "Error al eliminar Ajustes de inventarios: "  . $e->getMessage();
+    echo "Error al obtener Ajustes de inventarios: " . $e->getMessage();
     exit;
 }
 ?>
 <section class="section">
+    <h2>Eliminar Ajustes</h2>
     <form action="../controller/Ajustes_inventariosController.php" method="post">
         <label for="Responsable_Ajuste">Seleccione el Responsable a eliminar</label>
         <select name="ID_Ajuste" id="ID_Ajuste">
-            <?php
-            $ajustesInventariosModel = $model->obtenerAjustes_Inventarios();
-
-            foreach ($ajustesInventariosModel as $row) {
-                echo "<option value='" . $row['ID_Ajuste'] . "'>" . $row['Responsable_Ajuste'] . "</option>";
-            }
-            ?>
+            <?php foreach ($ajustesInventarios as $row): ?>
+                <option value="<?= htmlspecialchars($row['ID_Ajuste']) ?>">
+                    <?= htmlspecialchars($row['Responsable_Ajuste']) ?>
+                </option>
+            <?php endforeach; ?>
         </select>
         <input type="submit" name="eliminar" value="Eliminar Responsable">
     </form>
 </section>
-    <?php
-    require_once '../footer.php';
-    ?>
+<?php require_once '../footer.php'; ?>

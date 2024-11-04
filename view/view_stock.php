@@ -23,8 +23,8 @@ try {
     <?php
     // Verifica si hay datos de stock para mostrar
     if (!empty($stock)) {
-        // Inicia la tabla HTML y define las columnas
-        echo "<table border='1'>
+        // Inicia la tabla  HTML y define las columnas
+        echo "<table border='1' class='tabla_stock'>
             <tr>
                 <th>Nombre del Producto</th>
                 <th>Cantidad</th>

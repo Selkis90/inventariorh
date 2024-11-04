@@ -14,14 +14,14 @@ try {
     echo 'Error al obtener ajustes de inventarios: ' . $e->getMessage();
 }
 ?>
-<section class="section">;
+<section class="section">
     <h2>Ver Ajustes de Inventarios</h2>
 
     <?php
     // Verifica si hay datos de Ajustes de Inventarios para mostrar
     if (!empty($Ajustes_Inventarios)) {
         // Inicia la tabla HTML y define las columnas
-        echo "<table border='1'>
+        echo "<table border='1' class='tabla_ajustes'>
             <tr>
                 <th>Cantidad_Ajustada</th>
                 <th>Motivo</th>
@@ -47,7 +47,7 @@ try {
 
         // Cierra la tabla HTML
         echo "</table>";
-        echo'</section>';
+        
     } else {
         // Muestra un mensaje si no hay datos de Ajustes de Inventarios para mostrar
         echo "No hay datos para mostrar.";
@@ -55,3 +55,4 @@ try {
     // Incluye el archivo de pie de página
     require_once '../footer.php';
     ?>
+    </section>

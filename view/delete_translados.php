@@ -7,25 +7,22 @@ $model = new TransladoModel();
 try {
     $translado = $model->obtenerTranslado();
 } catch (Exception $e) {
-    echo "Error al eliminar translados: " . $e->getMessage();
+    echo "Error al obtener translados: " . $e->getMessage();
     exit;
 }
 ?>
 <section class="section">
+    <h2>Eliminar Translado</h2>
     <form action="../controller/TransladosController.php" method="post">
-        <label for="Tipo_Activo">Seleccione el tipo de translado a eliminar</label>
-        <select name="ID_Traslado" id="ID_Traslado ">
-            <?php
-            $translado = $model->obtenerTranslado();
-
-            foreach ($translado as $row) {
-                echo "<option value='" . $row['ID_Traslado'] . "'>" . $row['Tipo_Activo']  . "</option>";
-            }
-            ?>
+        <label for="ID_Traslado">Seleccione el tipo de translado a eliminar</label>
+        <select name="ID_Traslado" id="ID_Traslado">
+            <?php foreach ($translado as $row): ?>
+                <option value="<?= htmlspecialchars($row['ID_Traslado']) ?>">
+                    <?= htmlspecialchars($row['Tipo_Activo']) ?>
+                </option>
+            <?php endforeach; ?>
         </select>
-        <input type="submit" name="eliminar" value="eliminar translado">
+        <input type="submit" name="eliminar" value="Eliminar Translado">
     </form>
 </section>
-    <?php
-    require_once '../footer.php';
-    ?>
+<?php require_once '../footer.php'; ?>

@@ -212,6 +212,29 @@ tr:hover {
   background-color: #ddd;
 }
 
+.tabla_proveedor{
+  margin-left: 0px;
+}
+.tabla_producto{
+  margin-left: 32%;
+}
+.tabla_stock{
+  margin-left: 5%;
+}
+.tabla_activos{
+  margin-left: 44%;
+}
+.tabla_translados{
+  margin-left: 94%;
+}
+
+.tabla_ajustes{
+  margin-left: -7%;
+}
+
+.regresar{
+  margin-left: 10%;
+}
 /* Media Queries para diferentes dispositivos */
 
 /* Pantallas pequeñas (móviles) */

@@ -23,7 +23,7 @@ try {
     // Verifica si hay datos de activos para mostrar
     if (!empty($activo)) {
         // Inicia la tabla HTML y define las columnas
-        echo "<table border='1'>
+        echo "<table border='1'class='tabla_activos'>
                 <tr>
                     <th>Descripcion</th>
                     <th>Tipo_Activo</th>

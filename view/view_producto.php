@@ -16,7 +16,7 @@ try {
 
         echo '<section class="section">';
         // Inicia la tabla HTML y define las columnas
-        echo "<table border='1'>
+        echo "<table border='1' class='tabla_producto'>
                 <tr>
                     <th>Serial</th>
                     <th>Placa</th>

@@ -24,7 +24,7 @@ try {
     // Verifica si hay datos de proveedores para mostrar
     if (!empty($proveedor)) {
         // Inicia la tabla HTML y define las columnas
-        echo "<table border='1'>
+        echo "<table border='1' class='tabla_proveedor'>
     <tr>
         <th>Nombre</th>
         <th>Contacto</th>
