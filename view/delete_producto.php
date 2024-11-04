@@ -14,8 +14,8 @@ try {
 <section class="section">
     <h2>Eliminar Producto</h2>
     <form action="../controller/ProductoController.php" method="post">
-        <label for="Nombre">Seleccione el nombre del producto a eliminar</label>
-        <select name="ID_Producto" id="ID_Producto">
+        <label for="ID_Producto">Seleccione el producto a eliminar</label>
+        <select name="ID_Producto" id="ID_Producto" required>
             <?php foreach ($productos as $row): ?>
                 <option value="<?= htmlspecialchars($row['ID_Producto']) ?>">
                     <?= htmlspecialchars($row['Nombre']) ?>

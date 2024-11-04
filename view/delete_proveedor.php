@@ -1,28 +1,28 @@
 <?php
 require_once '../principal.php';
-require_once '../model/Ajustes_inventariosModel.php';
+require_once '../model/ProveedorModel.php';
 
-$model = new Ajustes_InventariosModel();
+$model = new ProveedorModel();
 
 try {
-    $ajustesInventarios = $model->obtenerAjustes_Inventarios();
+    $proveedores = $model->obtenerProveedor();
 } catch (Exception $e) {
-    echo "Error al obtener Ajustes de inventarios: " . htmlspecialchars($e->getMessage());
+    echo "Error al obtener proveedores: " . htmlspecialchars($e->getMessage());
     exit;
 }
 ?>
 <section class="section">
-    <h2>Eliminar Ajustes</h2>
-    <form action="../controller/Ajustes_inventariosController.php" method="post">
-        <label for="Responsable_Ajuste">Seleccione el Responsable a eliminar</label>
-        <select name="ID_Ajuste" id="ID_Ajuste">
-            <?php foreach ($ajustesInventarios as $row): ?>
-                <option value="<?= htmlspecialchars($row['ID_Ajuste']) ?>">
-                    <?= htmlspecialchars($row['Responsable_Ajuste']) ?>
+    <h2>Eliminar Proveedor</h2>
+    <form action="../controller/ProveedorController.php" method="post">
+        <label for="ID_Proveedor">Seleccione el Proveedor a eliminar</label>
+        <select name="ID_Proveedor" id="ID_Proveedor">
+            <?php foreach ($proveedores as $row): ?>
+                <option value="<?= htmlspecialchars($row['ID_Proveedor']) ?>">
+                    <?= htmlspecialchars($row['Nombre']) ?> (<?= htmlspecialchars($row['Contacto']) ?>)
                 </option>
             <?php endforeach; ?>
         </select>
-        <input type="submit" name="eliminar" value="Eliminar Responsable">
+        <input type="submit" name="eliminar" value="Eliminar Proveedor">
     </form>
 </section>
 <?php require_once '../footer.php'; ?>

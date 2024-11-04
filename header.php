@@ -20,8 +20,8 @@ require_once 'parametros.php';
     <!-- Enlace al archivo de estilos externo ubicado en la carpeta 'css' -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- Incluir Bootstrap (agrega esto en tu encabezado) -->
-    <link rel="stylesheet" href="./css/ocultar.css">
-
+    <!-- <link rel="stylesheet" href="./css/ocultar.css">
+ -->
     <!-- Agrega esto en la sección <head> de tu HTML -->
     <!-- <link href=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
 
@@ -36,7 +36,7 @@ require_once 'parametros.php';
         <div>
             <!-- Encabezado principal de la página -->
             <div id="titulo">
-                <button id="toggleMenu" class="btn btn-primary">☰ Menú</button>
+                <!-- <button id="toggleMenu" class="btn btn-primary">☰ Menú</button> -->
                 <!-- <h1>Andres ramirez lider del proyecto</h1> -->
             </div>
             <div class="lider">
