@@ -1,6 +1,6 @@
 <?php
 // Se incluye el archivo 'header.php', que probablemente contenga la estructura HTML y elementos comunes del encabezado
-require_once '../header.php';
+require_once '../principal.php';
 ?>
 
 <!-- Lista de enlaces de navegación para acciones relacionadas con Ajustes de inventarios -->

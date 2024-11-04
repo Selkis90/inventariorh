@@ -4,6 +4,7 @@ require_once '../principal.php';
 require_once '../model/TransladoModel.php';
 ?>
 <section class="section">
+    <h2>Crear Translado</h2>
     <!-- Formulario para la creación de traslados. Los datos se enviarán al controlador TransladosController.php mediante el método POST. -->
     <form action="../controller/TransladosController.php" method="post">
         <ul>

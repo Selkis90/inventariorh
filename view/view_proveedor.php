@@ -1,6 +1,8 @@
 <?php
 // Incluye archivos necesarios (header y modelo de Proveedor)
+
 require_once '../principal.php';
+
 require_once '../model/ProveedorModel.php';
 
 // Crea una instancia del modelo de Proveedor

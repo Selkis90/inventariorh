@@ -1,6 +1,6 @@
 <?php
 // Se incluye el archivo 'header.php' mediante 'include_once', que posiblemente contenga la estructura HTML y elementos comunes del encabezado
-include_once '../header.php';
+include_once '../principal.php';
 ?>
 
 <!-- Lista de enlaces de navegación para acciones relacionadas con Activos -->

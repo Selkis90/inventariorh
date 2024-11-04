@@ -3,6 +3,7 @@
 require_once '../principal.php';
 require_once '../model/ProductoModel.php';
 ?>
+
 <section class="section">
     <!-- Título de la página -->
     <h2>Crear Producto</h2>
@@ -82,7 +83,7 @@ require_once '../model/ProductoModel.php';
         </ul>
     </form>
 </section>
-    <?php
-    // Incluyendo el archivo de pie de página
-    require_once '../footer.php';
-    ?>
+<?php
+// Incluyendo el archivo de pie de página
+require_once '../footer.php';
+?>

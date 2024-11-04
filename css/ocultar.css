@@ -1,0 +1,24 @@
+/* Estilos para el menú lateral */
+.sidenav {
+    width: 160px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    z-index: 1000;
+}
+
+/* Mostrar el menú cuando esté activo */
+.sidenav.active {
+    transform: translateX(0);
+}
+
+/* Estilo del botón de menú */
+#toggleMenu {
+    position: fixed;
+    left: 170px;
+    top: 10px;
+    z-index: 1100;
+}

@@ -1,7 +1,6 @@
 <?php
 // Se incluye el archivo 'header.php' y 'activoModel.php', que probablemente contenga la estructura HTML y elementos comunes del encabezado
 require_once '../principal.php';
-
 require_once '../model/activoModel.php';
 
 ?>
