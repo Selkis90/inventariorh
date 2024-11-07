@@ -7,7 +7,7 @@ require_once 'menu.php';
 
 
 <!------------ Proveedor ------------>
-<section class="section" id="proveedor_oculto" style="display: none;">
+<section class="section section-hide-me" id="proveedor_oculto" style="display: none;">
 
     <!-- Lista de enlaces de navegación para realizar diversas acciones relacionadas con el manejo de Stock. -->
     <article class="article1">
@@ -42,7 +42,7 @@ require_once 'menu.php';
 </section>
 
 <!------------ Producto ------------>
-<section class="section" id="producto_oculto" style="display: none;">
+<section class="section section-hide-me" id="producto_oculto" style="display: none;">
 
     <!-- Lista de enlaces de navegación para realizar diversas acciones relacionadas con el manejo de Stock. -->
     <article class="article1">
@@ -76,7 +76,7 @@ require_once 'menu.php';
     </article>
 </section>
 <!------------ stock ------------>
-<section class="section" id="stock_oculto" style="display: none;">
+<section class="section section-hide-me" id="stock_oculto" style="display: none;">
 
     <!-- Lista de enlaces de navegación para realizar diversas acciones relacionadas con el manejo de Stock. -->
     <article class="article1">
@@ -112,7 +112,7 @@ require_once 'menu.php';
 
 
 <!------------ Activos ------------>
-<section class="section" id="activo_oculto" style="display: none;">
+<section class="section section-hide-me" id="activo_oculto" style="display: none;">
 
     <!-- Lista de enlaces de navegación para realizar diversas acciones relacionadas con el manejo de Stock. -->
     <article class="article1">
@@ -147,7 +147,7 @@ require_once 'menu.php';
 </section>
 
 <!------------ Translados ------------>
-<section class="section" id="translado_oculto" style="display: none;">
+<section class="section section-hide-me" id="translado_oculto" style="display: none;">
 
     <!-- Lista de enlaces de navegación para realizar diversas acciones relacionadas con el manejo de Stock. -->
     <article class="article1">
@@ -184,7 +184,7 @@ require_once 'menu.php';
 
 <!------------ Ajustes_Inventario ------------>
 
-<section class="section" id="Ajustes_Inventario_oculto" style="display: none;">
+<section class="section section-hide-me" id="Ajustes_Inventario_oculto" style="display: none;">
 
     <!-- Lista de enlaces de navegación para realizar diversas acciones relacionadas con el manejo de Stock. -->
     <article class="article1">
@@ -220,7 +220,7 @@ require_once 'menu.php';
 
 
 <!------------ Compras------------>
-<section class="section" id="compra_oculto" style="display: none;">
+<section class="section section-hide-me" id="compra_oculto" style="display: none;">
 
     <!-- Lista de enlaces de navegación para realizar diversas acciones relacionadas con el manejo de Stock. -->
     <article class="article1">
@@ -255,7 +255,7 @@ require_once 'menu.php';
 </section>
 
 <!-- Estructura HTML inicialmente oculta -->
-<section class="section" id="seccionPrueba" style="display: none;">
+<section class="section section-hide-me" id="seccionPrueba" style="display: none;">
     <article class="article1">
         <p>hola</p>
     </article>
