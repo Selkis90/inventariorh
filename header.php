@@ -16,9 +16,9 @@ require_once 'parametros.php';
     <!-- Título de la página que aparecerá en la pestaña del navegador -->
     <title><?= _APPLICATION_NAME ?></title>
     <!-- Enlace al ícono de la página -->
-    <link rel="icon" href="/img/logo inventariorh.jpg" type="image/x-icon">
+    <link rel="icon" href="<?= _URL ?>img/logo inventariorh.jpg" type="image/x-icon">
     <!-- Enlace al archivo de estilos externo ubicado en la carpeta 'css' -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="<?= _URL ?>css/style.css">
     <!-- Incluir Bootstrap (agrega esto en tu encabezado) -->
     <!-- <link rel="stylesheet" href="./css/ocultar.css">
  -->
@@ -27,7 +27,7 @@ require_once 'parametros.php';
 
 
 
-    <script src="./javascript/principal.js" defer></script>
+    <script src="<?= _URL ?>javascript/principal.js" defer></script>
 
 </head>
 

@@ -36,4 +36,4 @@
 </nav>
 <!-- menu oculto -->
 <!-- Enlace al archivo JavaScript -->
-<script src="./javascript/script.js"></script>
+<script src="<?= _URL ?>javascript/script.js"></script>
