@@ -67,17 +67,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["iniciar_sesion"])) {
             echo "<script>
                     saludar();
                     window.location.href = '../principal.php';
-                  </script>";
+                </script>";
         } else {
             echo "<script>
                     alert('Contraseña incorrecta.');
                     window.location.href = '../index.php';
-                  </script>";
+                </script>";
         }
     } else {
         echo "<script>
                 alert('Usuario no encontrado');
                 window.location.href = '../index.php';
-              </script>";
+            </script>";
     }
 }
