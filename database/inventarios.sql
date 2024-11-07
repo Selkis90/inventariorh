@@ -30,13 +30,13 @@ CREATE TABLE `Ajustes_Inventario` (
   `Fecha_Ajuste` date DEFAULT NULL,
   `Responsable_Ajuste` varchar(100) DEFAULT NULL,
   `Comentarios` text,
-  `Tipo_Ajuste` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Tipo_Ajuste` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Documento_Relacionado` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`ID_Ajuste`),
   KEY `Ajustes_Inventario_ibfk_1` (`ID_Stock`),
   CONSTRAINT `Ajustes_Inventario_ibfk_1` FOREIGN KEY (`ID_Stock`) REFERENCES `Stock` (`ID_Stock`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `chk_Tipo_Ajuste` CHECK ((`Tipo_Ajuste` in (_utf8mb4'Incremento',_utf8mb4'Decremento')))
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `Compras` (
   PRIMARY KEY (`ID_Compra`),
   KEY `ID_Proveedor` (`ID_Proveedor`),
   CONSTRAINT `Compras_ibfk_1` FOREIGN KEY (`ID_Proveedor`) REFERENCES `Proveedor` (`ID_Proveedor`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +111,7 @@ CREATE TABLE `Producto` (
   UNIQUE KEY `Placa` (`Placa`),
   KEY `Proveedor_ID` (`Proveedor_ID`),
   CONSTRAINT `Producto_ibfk_1` FOREIGN KEY (`Proveedor_ID`) REFERENCES `Proveedor` (`ID_Proveedor`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -135,12 +135,12 @@ CREATE TABLE `Proveedor` (
   `ID_Proveedor` int NOT NULL AUTO_INCREMENT,
   `Nombre` varchar(255) DEFAULT NULL,
   `Contacto` varchar(255) DEFAULT NULL,
-  `Telefono` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Telefono` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Direccion` text,
   `Correo_Electronico` varchar(255) DEFAULT NULL,
   `Observaciones` text,
   PRIMARY KEY (`ID_Proveedor`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +168,7 @@ CREATE TABLE `Stock` (
   PRIMARY KEY (`ID_Stock`),
   KEY `Producto_ID` (`Producto_ID`),
   CONSTRAINT `Stock_ibfk_1` FOREIGN KEY (`Producto_ID`) REFERENCES `Producto` (`ID_Producto`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,12 +201,12 @@ CREATE TABLE `Traslado` (
   `Persona_Entrega` varchar(100) DEFAULT NULL,
   `Cedula_Entrega` varchar(20) DEFAULT NULL,
   `Cargo_Entrega` varchar(50) DEFAULT NULL,
-  `Telefono_Entrega` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Telefono_Entrega` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Centro_Costo_Entrega` varchar(50) DEFAULT NULL,
   `Persona_Responsable` varchar(100) DEFAULT NULL,
   `Cedula_Responsable` varchar(20) DEFAULT NULL,
   `Cargo_Responsable` varchar(50) DEFAULT NULL,
-  `Telefono_Responsable` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `Telefono_Responsable` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Centro_Costo_Responsable` varchar(50) DEFAULT NULL,
   `Comentarios` text,
   `Estado` varchar(20) DEFAULT 'En Proceso',
@@ -215,7 +215,7 @@ CREATE TABLE `Traslado` (
   KEY `ID_Stock` (`ID_Stock`),
   CONSTRAINT `Traslado_ibfk_1` FOREIGN KEY (`ID_Activo`) REFERENCES `Producto` (`ID_Producto`) ON DELETE SET NULL,
   CONSTRAINT `Traslado_ibfk_2` FOREIGN KEY (`ID_Stock`) REFERENCES `Stock` (`ID_Stock`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -256,7 +256,7 @@ CREATE TABLE `ingreso_activos` (
   PRIMARY KEY (`ID_Ingreso`),
   KEY `Proveedor_ID` (`Proveedor_ID`),
   CONSTRAINT `ingreso_activos_ibfk_1` FOREIGN KEY (`Proveedor_ID`) REFERENCES `Proveedor` (`ID_Proveedor`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,7 +282,7 @@ CREATE TABLE `usuarios` (
   `correo` varchar(255) NOT NULL,
   `contraseña` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
