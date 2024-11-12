@@ -23,7 +23,7 @@ require_once '../model/ProductoModel.php';
             </li>
             <!-- Campo: Nombre -->
             <li>
-                <label for="nombre">Nombre</label>
+                <label for="nombre">Nombre del Producto</label>
                 <input type="text" name="nombre" id="nombre" required>
             </li>
             <!-- Campo: Descripción -->
